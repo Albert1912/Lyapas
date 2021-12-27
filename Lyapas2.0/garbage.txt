@@ -1,0 +1,14 @@
+    *get_size_fixed_size(L8/s)
+    Op
+§12
+    ↑(p=s)1
+    /'Rule: '>C
+    *get_field_fixed_size(L1,p,0/x,r) *n2s(x/F80) /' '>C /F80>C
+    *get_field_fixed_size(L1,p,1/x,r) *n2s(x/F80) /' '>C /F80>C
+    *get_field_fixed_size(L1,p,2/x,r) *n2s(x/F80) /' '>C /F80>C
+    /'\n'>C ∆p
+    →12
+
+    *n2s(x/F80) /'\n stack: '>C /F80>C
+    *n2s(i/F80) /'\n index: '>C /F80>C
+    *n2s(a/F80) /'\n term: '>C /F80>C
