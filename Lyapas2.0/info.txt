@@ -98,4 +98,4 @@ zeroing           O              38 +
 maximize          ⁻               39 +
 random            X              40 +
 time              T              41 +
-string            '[a-zA-Z0-9]+' 42
+string            '[a-zA-Z0-9]+' 42 +
