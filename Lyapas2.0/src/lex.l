@@ -49,6 +49,12 @@ lex(F1/F2,L3)
     *get_xor(F1,j/r,l,F4) 30⇒i r↦3
     *get_inc(F1,j/r,l,F4) 31⇒i r↦3
     *get_dec(F1,j/r,l,F4) 32⇒i r↦3
+    *get_semicolon(F1,j/r,l,F4) 37⇒i r↦3
+    *get_zeroing(F1,j/r,l,F4) 38⇒i r↦3
+    *get_maximize(F1,j/r,l,F4) 39⇒i r↦3
+    *get_random(F1,j/r,l,F4) 40⇒i r↦3
+    *get_time(F1,j/r,l,F4) 41⇒i r↦3
+    *get_string(F1,j/r,l,F4) 42⇒i r↦3
 
     @+F5(50) @'[LEXICAL ERROR] Unexpected token at position '>F5 *write(F5/)
     *writev_line(j/) →4
@@ -197,6 +203,36 @@ get_slash(F1,p/r,l,F2)
 ********************************************************************
 get_at(F1,p/r,l,F2)
     64⇒v *get_single(F1,p,v/r,l,F2)
+    **
+********************************************************************
+get_semicolon(F1,p/r,l,F2)
+    59⇒v *get_single(F1,p,v/r,l,F2)
+    **
+********************************************************************
+get_zeroing(F1,p/r,l,F2)
+    79⇒v *get_single(F1,p,v/r,l,F2)
+    **
+********************************************************************
+get_maximize(F1,p/r,l,F2)
+    @+F3(4) @'⁻'>F3 *get_entry(F1,p,F3/r,l,F2)
+    **
+********************************************************************
+get_random(F1,p/r,l,F2)
+    88⇒v *get_single(F1,p,v/r,l,F2)
+    **
+********************************************************************
+get_time(F1,p/r,l,F2)
+    84⇒v *get_single(F1,p,v/r,l,F2)
+    **
+********************************************************************
+get_string(F1,p/r,l,F2)
+    @+F3(1000) OQ2 Oz
+    39⇒v *get_single(F1,p,v/t,x,F3) t↪3
+§1
+     ∆p *get_single(F1,p,v/t,x,F3) t↦2 F1p⇒F2z ∆z ∆Q2 →1
+§2
+    z⇒r⇒l
+§3
     **
 ********************************************************************
 *** todo: length, capacity and other constructions can be parsed incorrect
