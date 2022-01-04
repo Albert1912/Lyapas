@@ -6,10 +6,10 @@
 *** L4 - output args
 *** F5 - variables
 *** L6 - complexes
-*** L7 - byte-code
+*** F7 - byte-code
 *** i - applied rule index
 ********************************************************************
-handle_applied_rule(L1,F2,L3,L4,F5,L6,L7,i/)
+handle_applied_rule(L1,F2,L3,L4,F5,L6,F7,i/)
 §0 ↑(i≠0)1 *handle_rule_0(L1,F2,L3,L4,F5,L6,L7/)→66
 §1 ↑(i≠1)2 *handle_rule_1(L1,F2,L3,L4,F5,L6,L7/)→66
 §2 ↑(i≠2)3 *handle_rule_2(L1,F2,L3,L4,F5,L6,L7/)→66
@@ -87,12 +87,12 @@ handle_applied_rule(L1,F2,L3,L4,F5,L6,L7,i/)
 *** L4 - output args
 *** F5 - variables
 *** L6 - complexes
-*** L7 - byte-code
+*** F7 - byte-code
 *** F8 - token array
 *** L9 - token array metadata
 *** i - accepted terminal index
 ********************************************************************
-handle_accepted_terminal(L1,F2,L3,L4,F5,L6,L7,F8,L9,i/)
+handle_accepted_terminal(L1,F2,L3,L4,F5,L6,F7,F8,L9,i/)
 **
 handle_rule_0(L1,F2,L3,L4,F5,L6,L7/) *** SUBPROGRAM -> HEAD BODY ** SUBPROGRAM
 **

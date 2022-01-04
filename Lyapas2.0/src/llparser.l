@@ -15,7 +15,7 @@ llparse(F3,L4,L5,L6,L7,L8/r)
     @+L10(1000) *** stack
     @+L11(15) *** temp
     @+L20(10000) @+F21(10000) @+L22(10000) *** context
-    @+L23(10000) @+F24(10000) @+L25(10000) @+L26(10000)
+    @+L23(10000) @+F24(10000) @+L25(10000) @+F26(10000)
     L5.0⇒x⇒L11.0 1⇒Q11
     *stack_push(L10,L11/L10)
 
@@ -29,13 +29,13 @@ llparse(F3,L4,L5,L6,L7,L8/r)
     *is_terminal(L7,x/r) r↦2
     *try_get_syntax_table_transition(L8,x,a/j,r) r↪2
     @'apply: '>F80 *write(F80/) OQ80 *writev_line(j/)
-    *handle_applied_rule(L20,F21,L22,L23,F24,L25,L26,j/)
+    *handle_applied_rule(L20,F21,L22,L23,F24,L25,F26,j/)
     *stack_pop(L10,1/L10,L11)
     *get_rule_by_id(L5,L6,j/L3,r) r↪2
     *stack_push(L10,L3/L10) →1
 §11
     @'accept: '>F80 *write(F80/) OQ80 *writev_line(a/)
-    *handle_accepted_terminal(L20,F21,L22,L23,F24,L25,L26,F3,L4,i/)
+    *handle_accepted_terminal(L20,F21,L22,L23,F24,L25,F26,F3,L4,i/)
     ∆i *stack_pop(L10,1/L10,L11) →1 *** X == a
 §2
     *** error
@@ -78,5 +78,5 @@ llparse(F3,L4,L5,L6,L7,L8/r)
 #write_line(F1/)
 #write(F1/)
 #writev_line(a/)
-#handle_applied_rule(L1,F2,L3,L4,F5,L6,L7,i/)
-#handle_accepted_terminal(L1,F2,L3,L4,F5,L6,L7,F8,L9,i/)
+#handle_applied_rule(L1,F2,L3,L4,F5,L6,F7,i/)
+#handle_accepted_terminal(L1,F2,L3,L4,F5,L6,F7,F8,L9,i/)
