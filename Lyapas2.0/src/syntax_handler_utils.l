@@ -153,6 +153,30 @@ get_variables_start(L1,F2,L3,L4,F5,L6,i/s)
     *get_field_fixed_size(L1,i,6/s,r)
 **
 ********************************************************************
+*** get variables count
+*** i - function index
+*** c - count
+********************************************************************
+get_variables_count(L1,F2,L3,L4,F5,L6,i/c)
+    *get_field_fixed_size(L1,i,7/c,r)
+**
+********************************************************************
+*** check has variable
+*** i - function index
+*** v - variable
+*** r - result
+********************************************************************
+has_variable(L1,F2,L3,L4,F5,L6,i,v/r)
+    *get_variables_start(L1,F2,L3,L4,F5,L6,i/s)
+    *get_variables_count(L1,F2,L3,L4,F5,L6,i/c)
+    s+c⇒b
+§1 ↑(s=b)3
+    *get_variable_ctx(L1,F2,L3,L4,F5,L6,s/x)
+    ∆s v⊕x↦1
+§2 1⇒r
+§3
+**
+********************************************************************
 *** get complexes start index
 *** i - function index
 *** s - start
