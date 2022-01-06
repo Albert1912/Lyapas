@@ -1,6 +1,6 @@
 
-lyapas: src/lyapas.l files stack common lex arrays fixed_size_array syntax_table llparser rules table syntax_handler syntax_handler_utils
-	./ltc src/lyapas.l -o build/lyapas obj/files.o obj/stack.o obj/common.o obj/lex.o obj/arrays.o obj/fixed_size_array.o obj/syntax_table.o obj/llparser.o obj/get_rules.o obj/get_table.o obj/syntax_handler.o obj/syntax_handler_utils.o
+lyapas: src/lyapas.l files stack common lex arrays fixed_size_array syntax_table llparser rules table syntax_handler syntax_handler_utils tree tree_extensions
+	./ltc src/lyapas.l -o build/lyapas obj/files.o obj/stack.o obj/common.o obj/lex.o obj/arrays.o obj/fixed_size_array.o obj/syntax_table.o obj/llparser.o obj/get_rules.o obj/get_table.o obj/syntax_handler.o obj/syntax_handler_utils.o obj/tree.o obj/tree_extensions.o
 
 llparser: src/llparser.l
 	./ltc -c src/llparser.l -o obj/llparser
@@ -10,6 +10,12 @@ lex: src/lex.l
 
 arrays: src/arrays.l
 	./ltc -c src/arrays.l -o obj/arrays
+
+tree: src/tree.l
+	./ltc -c src/tree.l -o obj/tree
+
+tree_extensions: src/tree_extensions.l
+	./ltc -c src/tree_extensions.l -o obj/tree_extensions
 
 fixed_size_array: src/fixed_size_array.l
 	./ltc -c src/fixed_size_array.l -o obj/fixed_size_array
