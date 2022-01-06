@@ -3,3 +3,5 @@
 services:
   lyapas:
     build: .
+    volumes:
+    - ./Lyapas2.0/lyapas.log:/Lyapas2.0/lyapas.log

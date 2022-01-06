@@ -11,5 +11,6 @@ RUN cd Lyapas2.0 && mkdir obj && mkdir build && make
 FROM ubuntu:18.04 as final
 WORKDIR /
 COPY --from=build . .
-#ENTRYPOINT ls Lyapas2.0/obj
+VOLUME ["/Lyapas2.0/lyapas.log"]
+#ENTRYPOINT ls Lyapas2.0
 ENTRYPOINT ./Lyapas2.0/build/lyapas Lyapas2.0/file.txt
