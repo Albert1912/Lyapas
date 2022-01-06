@@ -76,7 +76,7 @@ lex(F1/F2,L3)
 *** l - length of constant
 *** F2 - constant value
 ********************************************************************
-get_constant(F1,p/r,l,F2)
+~get_constant(F1,p/r,l,F2)
     p⇒j Q1⇒n OQ2
 §1
     ↑(j=n)2
@@ -95,7 +95,7 @@ get_constant(F1,p/r,l,F2)
 *** l - length of constant
 *** F2 - variable name
 ********************************************************************
-get_variable(F1,p/r,l,F2)
+~get_variable(F1,p/r,l,F2)
     Q1⇒n OQ2
     ↑(F1p<97)1
     ↑(F1p>122)1
@@ -111,19 +111,19 @@ get_variable(F1,p/r,l,F2)
 *** l - length of constant
 *** F2 - variable name
 ********************************************************************
-get_assign(F1,p/r,l,F2)
+~get_assign(F1,p/r,l,F2)
     @+F3(4) @'⇒'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_lpar(F1,p/r,l,F2)
+~get_lpar(F1,p/r,l,F2)
     40⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_rpar(F1,p/r,l,F2)
+~get_rpar(F1,p/r,l,F2)
     41⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_complex(F1,p/r,l,F2)
+~get_complex(F1,p/r,l,F2)
     @+F3(1)
     70⇒v *get_single(F1,p,v/r,l,F3) r↪2
     ∆p *get_constant(F1,p/r,l,F2) r↪4 →5
@@ -137,95 +137,95 @@ get_complex(F1,p/r,l,F2)
 §6
     **
 ********************************************************************
-get_up_arrow(F1,p/r,l,F2)
+~get_up_arrow(F1,p/r,l,F2)
     @+F3(4) @'↑'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_jump(F1,p/r,l,F2)
+~get_jump(F1,p/r,l,F2)
     @+F3(4) @'→'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_jump_not_zero(F1,p/r,l,F2)
+~get_jump_not_zero(F1,p/r,l,F2)
     @+F3(4) @'↦'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_jump_zero(F1,p/r,l,F2)
+~get_jump_zero(F1,p/r,l,F2)
     @+F3(4) @'↪'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_equal(F1,p/r,l,F2)
+~get_equal(F1,p/r,l,F2)
     61⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_not_equal(F1,p/r,l,F2)
+~get_not_equal(F1,p/r,l,F2)
     @+F3(4) @'≠'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_less(F1,p/r,l,F2)
+~get_less(F1,p/r,l,F2)
     60⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_greater(F1,p/r,l,F2)
+~get_greater(F1,p/r,l,F2)
     62⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_less_or_equal(F1,p/r,l,F2)
+~get_less_or_equal(F1,p/r,l,F2)
     @+F3(4) @'≤'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_greater_or_equal(F1,p/r,l,F2)
+~get_greater_or_equal(F1,p/r,l,F2)
     @+F3(4) @'≥'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_dot(F1,p/r,l,F2)
+~get_dot(F1,p/r,l,F2)
     46⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_star(F1,p/r,l,F2)
+~get_star(F1,p/r,l,F2)
     42⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_plus(F1,p/r,l,F2)
+~get_plus(F1,p/r,l,F2)
     43⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_mark(F1,p/r,l,F2)
+~get_mark(F1,p/r,l,F2)
     @+F3(4) @'§'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_minus(F1,p/r,l,F2)
+~get_minus(F1,p/r,l,F2)
     @+F3(4) @'-'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_slash(F1,p/r,l,F2)
+~get_slash(F1,p/r,l,F2)
     @+F3(4) @'/'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_at(F1,p/r,l,F2)
+~get_at(F1,p/r,l,F2)
     64⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_semicolon(F1,p/r,l,F2)
+~get_semicolon(F1,p/r,l,F2)
     59⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_zeroing(F1,p/r,l,F2)
+~get_zeroing(F1,p/r,l,F2)
     79⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_maximize(F1,p/r,l,F2)
+~get_maximize(F1,p/r,l,F2)
     @+F3(4) @'⁻'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_random(F1,p/r,l,F2)
+~get_random(F1,p/r,l,F2)
     88⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_time(F1,p/r,l,F2)
+~get_time(F1,p/r,l,F2)
     84⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_string(F1,p/r,l,F2)
+~get_string(F1,p/r,l,F2)
     @+F3(1000) OQ2 Oz Or
     39⇒v *get_single(F1,p,v/t,x,F3) t↪3
 §1
@@ -236,7 +236,7 @@ get_string(F1,p/r,l,F2)
     **
 ********************************************************************
 *** todo: length, capacity and other constructions can be parsed incorrect
-get_name(F1,p/r,l,F2)
+~get_name(F1,p/r,l,F2)
     p⇒j Q1⇒n OQ2 Or
 §1
     ↑(j=n)2
@@ -271,43 +271,43 @@ get_name(F1,p/r,l,F2)
 §7
     **
 ********************************************************************
-get_comma(F1,p/r,l,F2)
+~get_comma(F1,p/r,l,F2)
     44⇒v *get_single(F1,p,v/r,l,F2)
     **
 ********************************************************************
-get_inversion(F1,p/r,l,F2)
+~get_inversion(F1,p/r,l,F2)
     @+F3(4) @'¬'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_percent(F1,p/r,l,F2)
+~get_percent(F1,p/r,l,F2)
     @+F3(4) @'%'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_or(F1,p/r,l,F2)
+~get_or(F1,p/r,l,F2)
     @+F3(4) @'∨'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_and(F1,p/r,l,F2)
+~get_and(F1,p/r,l,F2)
     @+F3(4) @'&'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_xor(F1,p/r,l,F2)
+~get_xor(F1,p/r,l,F2)
     @+F3(4) @'⊕'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_inc(F1,p/r,l,F2)
+~get_inc(F1,p/r,l,F2)
     @+F3(4) @'∆'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_dec(F1,p/r,l,F2)
+~get_dec(F1,p/r,l,F2)
     @+F3(4) @'∇'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_ret(F1,p/r,l,F2)
+~get_ret(F1,p/r,l,F2)
     @+F3(4) @'**'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
-get_length(F1,p/r,l,F2)
+~get_length(F1,p/r,l,F2)
     @+F3(1)
     81⇒v *get_single(F1,p,v/r,l,F3) r↪4
     ∆p *get_constant(F1,p/r,l,F2) r↪4 →5
@@ -318,7 +318,7 @@ get_length(F1,p/r,l,F2)
 §6
     **
 ********************************************************************
-get_capacity(F1,p/r,l,F2)
+~get_capacity(F1,p/r,l,F2)
     @+F3(1)
     67⇒v *get_single(F1,p,v/r,l,F3) r↪4
     ∆p *get_constant(F1,p/r,l,F2) r↪4 →5
@@ -337,7 +337,7 @@ get_capacity(F1,p/r,l,F2)
 *** l - length (always 1 if success)
 *** F2 - value (always equal char(v) if success)
 ********************************************************************
-get_single(F1,p,v/r,l,F2)
+~get_single(F1,p,v/r,l,F2)
     OQ2
     ↑(F1p≠v)1
     F1p@>F2
@@ -353,7 +353,7 @@ get_single(F1,p,v/r,l,F2)
 *** l - length
 *** F3 - value
 ********************************************************************
-get_entry(F1,p,F2/r,l,F3)
+~get_entry(F1,p,F2/r,l,F3)
     OQ3
     Oj Q1⇒n p⇒i
 §1
@@ -370,8 +370,6 @@ get_entry(F1,p,F2/r,l,F3)
     **
 ********************************************************************
 #init_token_array(/F1,L2)
-#get_token_id(L1,i/d)
-#get_token(F1,L2,i/F3)
 #add_token(F1,L2,F3,i,p/F1,L2)
 #write_line(F1/)
 #write(F1/)
