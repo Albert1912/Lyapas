@@ -38,14 +38,14 @@ writev(a/)
     **
 ********************************************************************
 fwrite_line(F1/)
-    @+F2(15) @'\n'>F1 @'lyapas.log'>F2
-    *fopen(F2,10/n) *fwritef(n,F1,0,Q1/k) *fclose(n/)
+    @+F2(40) @'\n'>F1 @'/Lyapas2.0/lyapas.log'>F2
+    *fopen(F2,1/n) *fwritef(n,F1,0,Q1/k) *fclose(n/)
     ∇Q1
     **
 ********************************************************************
 fwrite(F1/)
-    @+F2(15) @'lyapas.log'>F2
-    *fopen(F2,10/n) *fwritef(n,F1,0,Q1/k) *fclose(n/)
+    @+F2(40) @'/Lyapas2.0/lyapas.log'>F2
+    *fopen(F2,1/n) *fwritef(n,F1,0,Q1/k) *fclose(n/)
     **
 ********************************************************************
 #fopen(F1,r/n)
