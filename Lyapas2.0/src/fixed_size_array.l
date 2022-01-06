@@ -9,7 +9,7 @@ init_fixed_size(n/L1)
 ********************************************************************
 *** add struct
 *** L1 - struct array
-*** L2 - struct representaion
+*** L2 - struct representation
 *** r - result (1 - ok, 0 - failed)
 ********************************************************************
 add_fixed_size(L1,L2/r)
