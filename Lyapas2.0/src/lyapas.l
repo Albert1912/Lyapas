@@ -43,7 +43,7 @@ head(/)
     1⇒i
 §31
     i@>L52
-    ∆i i⊕37 ↦31
+    ∆i i⊕50 ↦31
 
 *** set rules
     OQ5 @'Setting rules'>F5 *write_line(F5/)
@@ -54,7 +54,9 @@ head(/)
     *get_table(/L53)
 
     OQ5 @'Start parsing'>F5 *write_line(F5/)
-    *llparse(F3,L4,L50,L51,L52,L53/r) r↪5
+    @+L60(10000) @+L61(10000) *** AST
+    *init_tree(L60,L61/L60,L61)
+    *llparse(F3,L4,L50,L51,L52,L53/L60,L61,r) r↪5
     OQ5 @'Success'>F5 *write_line(F5/) →6
 §5
     OQ5 @'Fatal'>F5 *write_line(F5/)
@@ -69,12 +71,13 @@ head(/)
 #read_all_text(F1/F2)
 
 #lex(F1/F2,L3)
-#llparse(F3,L4,L5,L6,L7,L8/r)
+#llparse(F3,L4,L5,L6,L7,L8/L20,L21,r)
 
 #get_token_id(L1,i/d)
 #get_token(F1,L2,i/F3)
 
 #init_rules_array(/L1,L2)
+#init_tree(L1,L2/L1,L2)
 
 #get_table(/L1)
 #get_rules(/L1,L2)
