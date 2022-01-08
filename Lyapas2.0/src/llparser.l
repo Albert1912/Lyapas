@@ -42,7 +42,6 @@ llparse(F3,L4,L5,L6,L7,L8/L20,L21,r)
     *writev_line(p/)
     0⇒r →4
 §3
-    *writev_line(Q22/)
     *** ok
     1⇒r
 §4
