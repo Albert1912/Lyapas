@@ -491,7 +491,8 @@ handle_rule_36(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> cmp ( OPERAND CONDITIONOP OPER
     n⇒j
 **
 handle_rule_37(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> par const
-    n⇒j
+    *add_node(L1,L2,n,34,0/L1,L2,x)
+    *add_node(L1,L2,x,9,0/L1,L2,j)
 **
 handle_rule_38(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> at COMPLEXEXPR
     n⇒j
@@ -826,6 +827,10 @@ handle_terminal_35(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> JUMPOP const
 handle_terminal_36(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> cmp ( OPERAND CONDITIONOP OPERAND ) const
 **
 handle_terminal_37(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> par const
+    ↑(t≠1)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_38(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> at COMPLEXEXPR
 **
