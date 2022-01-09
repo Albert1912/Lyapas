@@ -456,7 +456,7 @@ handle_rule_27(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> lowerone
     *add_node(L1,L2,n,22,0/L1,L2,j)
 **
 handle_rule_28(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> inversion
-    n⇒j
+    *add_node(L1,L2,n,23,0/L1,L2,j)
 **
 handle_rule_29(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> weighing
     n⇒j
