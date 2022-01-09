@@ -331,7 +331,7 @@ lex(F1/F2,L3)
 ********************************************************************
 ~get_capacity(F1,p/r,l,F2)
     @+F3(1)
-    67⇒v *get_single(F1,p,v/r,l,F3) r↪4
+    83⇒v *get_single(F1,p,v/r,l,F3) r↪4
     ∆p *get_constant(F1,p/r,l,F2) r↪4 →5
 §4
     0⇒l⇒r →6

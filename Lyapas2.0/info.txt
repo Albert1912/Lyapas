@@ -92,7 +92,7 @@ dec               ∇              32 +
 eof               eof            33 +
 ret               **             34 +
 length            Q[0-9]+        35 +
-capacity          C[0-9]+        36 +
+capacity          S[0-9]+        36 +
 semicolon         ;              37 +
 zeroing           O              38 +
 maximize          ⁻               39 +
