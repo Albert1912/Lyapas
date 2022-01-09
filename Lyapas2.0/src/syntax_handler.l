@@ -438,7 +438,7 @@ handle_rule_21(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> assign ASSIGNABLEOPERAND
     n⇒j
 **
 handle_rule_22(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> OPERAND
-    n⇒j
+    *add_node(L1,L2,n,0,0/L1,L2,j)
 **
 handle_rule_23(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> complex INDEX
     n⇒j
