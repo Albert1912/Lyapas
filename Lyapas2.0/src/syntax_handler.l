@@ -441,7 +441,7 @@ handle_rule_22(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> OPERAND
     *add_node(L1,L2,n,0,0/L1,L2,j)
 **
 handle_rule_23(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> complex INDEX
-    n⇒j
+    *add_node(L1,L2,n,8,0/L1,L2,j)
 **
 handle_rule_24(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> swap ( SWAPEXPR )
     n⇒j
@@ -555,10 +555,10 @@ handle_rule_60(L1,L2,L3,n/L1,L2,L3,j) *** JUMPOP -> jump
     n⇒j
 **
 handle_rule_61(L1,L2,L3,n/L1,L2,L3,j) *** INDEX -> . const
-    n⇒j
+    *add_node(L1,L2,n,9,0/L1,L2,j)
 **
 handle_rule_62(L1,L2,L3,n/L1,L2,L3,j) *** INDEX -> id
-    n⇒j
+    *add_node(L1,L2,n,6,0/L1,L2,j)
 **
 handle_rule_63(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOP -> +
     n⇒j
@@ -627,7 +627,7 @@ handle_rule_84(L1,L2,L3,n/L1,L2,L3,j) *** ASSIGNABLEOPERAND -> id
     *add_node(L1,L2,n,6,0/L1,L2,j)
 **
 handle_rule_85(L1,L2,L3,n/L1,L2,L3,j) *** ASSIGNABLEOPERAND -> complex INDEX
-    n⇒j
+    *add_node(L1,L2,n,8,0/L1,L2,j)
 **
 handle_rule_86(L1,L2,L3,n/L1,L2,L3,j) *** ASSIGNABLEOPERAND -> length
     n⇒j
@@ -754,6 +754,10 @@ handle_terminal_21(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> assign ASSIGNABLEO
 handle_terminal_22(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> OPERAND
 **
 handle_terminal_23(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> complex INDEX
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_24(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> swap ( SWAPEXPR )
 **
@@ -830,8 +834,16 @@ handle_terminal_59(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** JUMPOP -> jnz
 handle_terminal_60(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** JUMPOP -> jump
 **
 handle_terminal_61(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** INDEX -> . const
+    ↑(t≠1)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_62(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** INDEX -> id
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_63(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOP -> +
 **
@@ -888,6 +900,10 @@ handle_terminal_84(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> id
 §1
 **
 handle_terminal_85(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> complex INDEX
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_86(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> length
 **
