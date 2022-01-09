@@ -101,3 +101,5 @@ time              T              41 +
 string            '[a-zA-Z0-9]+' 42 +
 swap              ⇔              44 +
 lowerone          !              45 +
+singleconst       I[0-63]        48 +
+

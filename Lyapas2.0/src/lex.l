@@ -16,6 +16,7 @@ lex(F1/F2,L3)
     ↑(F1j=13)2
     *get_length(F1,j/r,l,F4) 35⇒i r↦3
     *get_capacity(F1,j/r,l,F4) 36⇒i r↦3
+    *get_singleconst(F1,j/r,l,F4) 48⇒i r↦3
     *get_name(F1,j/r,l,F4) 24⇒i r↦3
     *get_ret(F1,j/r,l,F4) 34⇒i r↦3
     *get_variable(F1,j/r,l,F4) 1⇒i r↦3
@@ -339,6 +340,19 @@ lex(F1/F2,L3)
 §6
     **
 ********************************************************************
+~get_singleconst(F1,p/r,l,F2)
+    @+F3(1)
+    73⇒v *get_single(F1,p,v/r,l,F3) r↪4
+    ∆p *get_constant(F1,p/r,l,F2) r↪4 →5
+§4
+    0⇒l⇒r →6
+§5
+    *s2n(F2/c)
+    ↑(c≥64)4
+    F3.0@>F2.0 ∆l⇒r
+§6
+    **
+********************************************************************
 *** try get single value from text
 *** F1 - text
 *** p - start position
@@ -384,3 +398,4 @@ lex(F1/F2,L3)
 #write_line(F1/)
 #write(F1/)
 #writev_line(a/)
+#s2n(F1/a)
