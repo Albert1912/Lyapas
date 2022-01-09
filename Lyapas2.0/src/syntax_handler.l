@@ -537,7 +537,9 @@ handle_rule_48(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXEXPR -> zeroing complex
     *add_node(L1,L2,x,7,0/L1,L2,j)
 **
 handle_rule_49(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXEXPR -> string g complex
-    n⇒j
+    *add_node(L1,L2,n,37,0/L1,L2,j)
+    *add_node(L1,L2,j,38,0/L1,L2,x)
+    *add_node(L1,L2,j,7,0/L1,L2,x)
 **
 handle_rule_50(L1,L2,L3,n/L1,L2,L3,j) *** SWAPEXPR -> id id
     *add_node(L1,L2,n,6,0/L1,L2,x)
@@ -880,6 +882,16 @@ handle_terminal_48(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> zeroing com
 §1
 **
 handle_terminal_49(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> string g complex
+    ↑(t≠0)1
+    *get_child_node_index(L1,L2,n,0/c)
+    *get_node_info(L1,L2,c/j,v)
+    *update_node_info(L1,L2,c,j,i/)
+§1
+    ↑(t≠2)2
+    *get_child_node_index(L1,L2,n,1/c)
+    *get_node_info(L1,L2,c/j,v)
+    *update_node_info(L1,L2,c,j,i/)
+§2
 **
 handle_terminal_50(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPEXPR -> id id
     *get_child_node_index(L1,L2,n,t/c)
