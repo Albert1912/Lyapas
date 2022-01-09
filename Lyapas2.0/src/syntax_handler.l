@@ -444,7 +444,7 @@ handle_rule_23(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> complex INDEX
     *add_node(L1,L2,n,8,0/L1,L2,j)
 **
 handle_rule_24(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> swap ( SWAPEXPR )
-    n⇒j
+    *add_node(L1,L2,n,19,0/L1,L2,j)
 **
 handle_rule_25(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> zeroing ASSIGNABLEOPERAND
     n⇒j
@@ -522,22 +522,27 @@ handle_rule_49(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXEXPR -> string g complex
     n⇒j
 **
 handle_rule_50(L1,L2,L3,n/L1,L2,L3,j) *** SWAPEXPR -> id id
+    *add_node(L1,L2,n,6,0/L1,L2,x)
+    *add_node(L1,L2,n,6,0/L1,L2,x)
     n⇒j
 **
 handle_rule_51(L1,L2,L3,n/L1,L2,L3,j) *** SWAPEXPR -> complex SWAPFIRST SWAPSECOND
+    *add_node(L1,L2,n,7,0/L1,L2,x)
+    *add_node(L1,L2,n,0,0/L1,L2,x)
+    *add_node(L1,L2,n,0,0/L1,L2,x)
     n⇒j
 **
 handle_rule_52(L1,L2,L3,n/L1,L2,L3,j) *** SWAPFIRST -> id
-    n⇒j
+    *get_child_node_index(L1,L2,n,1/j)
 **
 handle_rule_53(L1,L2,L3,n/L1,L2,L3,j) *** SWAPFIRST -> . const
-    n⇒j
+    *get_child_node_index(L1,L2,n,1/j)
 **
 handle_rule_54(L1,L2,L3,n/L1,L2,L3,j) *** SWAPSECOND -> id
-    n⇒j
+    *get_child_node_index(L1,L2,n,2/j)
 **
 handle_rule_55(L1,L2,L3,n/L1,L2,L3,j) *** SWAPSECOND -> const
-    n⇒j
+    *get_child_node_index(L1,L2,n,2/j)
 **
 handle_rule_56(L1,L2,L3,n/L1,L2,L3,j) *** CONSOLEACTION -> l
     n⇒j
@@ -812,16 +817,40 @@ handle_terminal_48(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> zeroing com
 handle_terminal_49(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> string g complex
 **
 handle_terminal_50(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPEXPR -> id id
+    *get_child_node_index(L1,L2,n,t/c)
+    *get_node_info(L1,L2,c/j,v)
+    *update_node_info(L1,L2,c,j,i/)
 **
 handle_terminal_51(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPEXPR -> complex SWAPFIRST SWAPSECOND
+    ↑(t≠0)1
+    *get_child_node_index(L1,L2,n,0/c)
+    *get_node_info(L1,L2,c/j,v)
+    *update_node_info(L1,L2,c,j,i/)
+§1
 **
 handle_terminal_52(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPFIRST -> id
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,6,i/)
+§1
 **
 handle_terminal_53(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPFIRST -> . const
+    ↑(t≠1)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,9,i/)
+§1
 **
 handle_terminal_54(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPSECOND -> id
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,6,i/)
+§1
 **
 handle_terminal_55(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPSECOND -> const
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,9,i/)
+§1
 **
 handle_terminal_56(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONSOLEACTION -> l
 **
