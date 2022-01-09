@@ -645,19 +645,19 @@ handle_rule_78(L1,L2,L3,n/L1,L2,L3,j) *** OPERAND -> const
     *add_node(L1,L2,n,9,0/L1,L2,j)
 **
 handle_rule_79(L1,L2,L3,n/L1,L2,L3,j) *** OPERAND -> length
-    n⇒j
+    *add_node(L1,L2,n,39,0/L1,L2,j)
 **
 handle_rule_80(L1,L2,L3,n/L1,L2,L3,j) *** OPERAND -> capacity
-    n⇒j
+    *add_node(L1,L2,n,40,0/L1,L2,j)
 **
 handle_rule_81(L1,L2,L3,n/L1,L2,L3,j) *** OPERAND -> random
-    n⇒j
+    *add_node(L1,L2,n,41,0/L1,L2,j)
 **
 handle_rule_82(L1,L2,L3,n/L1,L2,L3,j) *** OPERAND -> singleconst
-    n⇒j
+    *add_node(L1,L2,n,42,0/L1,L2,j)
 **
 handle_rule_83(L1,L2,L3,n/L1,L2,L3,j) *** OPERAND -> time
-    n⇒j
+    *add_node(L1,L2,n,43,0/L1,L2,j)
 **
 handle_rule_84(L1,L2,L3,n/L1,L2,L3,j) *** ASSIGNABLEOPERAND -> id
     *add_node(L1,L2,n,6,0/L1,L2,j)
@@ -666,10 +666,10 @@ handle_rule_85(L1,L2,L3,n/L1,L2,L3,j) *** ASSIGNABLEOPERAND -> complex INDEX
     *add_node(L1,L2,n,8,0/L1,L2,j)
 **
 handle_rule_86(L1,L2,L3,n/L1,L2,L3,j) *** ASSIGNABLEOPERAND -> length
-    n⇒j
+    *add_node(L1,L2,n,39,0/L1,L2,j)
 **
 handle_rule_87(L1,L2,L3,n/L1,L2,L3,j) *** ASSIGNABLEOPERAND -> random
-    n⇒j
+    *add_node(L1,L2,n,41,0/L1,L2,j)
 **
 handle_rule_88(L1,L2,L3,n/L1,L2,L3,j) *** CALLINARGS -> CALLINARG NEXTCALLINARGS
     n⇒j
@@ -1004,14 +1004,34 @@ handle_terminal_78(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> const
 §1
 **
 handle_terminal_79(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> length
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_80(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> capacity
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_81(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> random
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_82(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> singleconst
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_83(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> time
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_84(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> id
     ↑(t≠0)1
@@ -1026,8 +1046,16 @@ handle_terminal_85(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> compl
 §1
 **
 handle_terminal_86(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> length
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_87(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> random
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_88(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINARGS -> CALLINARG NEXTCALLINARGS
 **
