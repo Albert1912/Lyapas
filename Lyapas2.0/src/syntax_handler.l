@@ -478,10 +478,10 @@ handle_rule_32(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> / SLASHEXPR
     n⇒j
 **
 handle_rule_33(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> inc ASSIGNABLEOPERAND
-    n⇒j
+    *add_node(L1,L2,n,28,0/L1,L2,j)
 **
 handle_rule_34(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> dec ASSIGNABLEOPERAND
-    n⇒j
+    *add_node(L1,L2,n,29,0/L1,L2,j)
 **
 handle_rule_35(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> JUMPOP const
     n⇒j
