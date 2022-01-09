@@ -447,7 +447,7 @@ handle_rule_24(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> swap ( SWAPEXPR )
     *add_node(L1,L2,n,19,0/L1,L2,j)
 **
 handle_rule_25(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> zeroing ASSIGNABLEOPERAND
-    n⇒j
+    *add_node(L1,L2,n,20,0/L1,L2,j)
 **
 handle_rule_26(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> maximize ASSIGNABLEOPERAND
     n⇒j
