@@ -444,10 +444,11 @@ handle_rule_21(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> assign ASSIGNABLEOPERAND
     *add_node(L1,L2,n,18,0/L1,L2,j)
 **
 handle_rule_22(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> OPERAND
-    *add_node(L1,L2,n,0,0/L1,L2,j)
+    *add_node(L1,L2,n,25,0/L1,L2,j)
 **
 handle_rule_23(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> complex INDEX
-    *add_node(L1,L2,n,8,0/L1,L2,j)
+    *add_node(L1,L2,n,25,0/L1,L2,x)
+    *add_node(L1,L2,x,8,0/L1,L2,j)
 **
 handle_rule_24(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> swap ( SWAPEXPR )
     *add_node(L1,L2,n,19,0/L1,L2,j)
@@ -614,10 +615,10 @@ handle_rule_76(L1,L2,L3,n/L1,L2,L3,j) *** CONDITIONOP -> le
     n⇒j
 **
 handle_rule_77(L1,L2,L3,n/L1,L2,L3,j) *** OPERAND -> id
-    n⇒j
+    *add_node(L1,L2,n,6,0/L1,L2,j)
 **
 handle_rule_78(L1,L2,L3,n/L1,L2,L3,j) *** OPERAND -> const
-    n⇒j
+    *add_node(L1,L2,n,9,0/L1,L2,j)
 **
 handle_rule_79(L1,L2,L3,n/L1,L2,L3,j) *** OPERAND -> length
     n⇒j
@@ -914,12 +915,14 @@ handle_terminal_76(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONDITIONOP -> le
 **
 handle_terminal_77(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> id
     ↑(t≠0)1
-    *update_node_info(L1,L2,n,6,i/)
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
 §1
 **
 handle_terminal_78(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> const
     ↑(t≠0)1
-    *update_node_info(L1,L2,n,9,i/)
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
 §1
 **
 handle_terminal_79(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> length
