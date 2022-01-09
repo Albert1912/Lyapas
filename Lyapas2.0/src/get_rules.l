@@ -57,7 +57,7 @@ OQ3 111@>L3 39@>L3 113@>L3
 *add_rule(L1,L2,L3,0/L1,L2) *** EXPR -> maximize ASSIGNABLEOPERAND
 OQ3 111@>L3 45@>L3
 *add_rule(L1,L2,L3,0/L1,L2) *** EXPR -> lowerone
-OQ3 111@>L3 46@>L3
+OQ3 111@>L3 26@>L3
 *add_rule(L1,L2,L3,0/L1,L2) *** EXPR -> inversion
 OQ3 111@>L3 47@>L3
 *add_rule(L1,L2,L3,0/L1,L2) *** EXPR -> weighing
