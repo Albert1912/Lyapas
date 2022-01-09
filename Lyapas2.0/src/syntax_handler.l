@@ -484,7 +484,8 @@ handle_rule_34(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> dec ASSIGNABLEOPERAND
     *add_node(L1,L2,n,29,0/L1,L2,j)
 **
 handle_rule_35(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> JUMPOP const
-    n⇒j
+    *add_node(L1,L2,n,0,0/L1,L2,x)
+    *add_node(L1,L2,x,9,0/L1,L2,j)
 **
 handle_rule_36(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> cmp ( OPERAND CONDITIONOP OPERAND ) const
     n⇒j
@@ -564,13 +565,16 @@ handle_rule_57(L1,L2,L3,n/L1,L2,L3,j) *** CONSOLEACTION -> g
     n⇒j
 **
 handle_rule_58(L1,L2,L3,n/L1,L2,L3,j) *** JUMPOP -> jz
-    n⇒j
+    *get_parent_node_index(L1,L2,n/j)
+    *update_node_info(L1,L2,j,30,0/)
 **
 handle_rule_59(L1,L2,L3,n/L1,L2,L3,j) *** JUMPOP -> jnz
-    n⇒j
+    *get_parent_node_index(L1,L2,n/j)
+    *update_node_info(L1,L2,j,31,0/)
 **
 handle_rule_60(L1,L2,L3,n/L1,L2,L3,j) *** JUMPOP -> jump
-    n⇒j
+    *get_parent_node_index(L1,L2,n/j)
+    *update_node_info(L1,L2,j,32,0/)
 **
 handle_rule_61(L1,L2,L3,n/L1,L2,L3,j) *** INDEX -> . const
     *add_node(L1,L2,n,9,0/L1,L2,j)
@@ -814,6 +818,10 @@ handle_terminal_33(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> inc ASSIGNABLEOPER
 handle_terminal_34(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> dec ASSIGNABLEOPERAND
 **
 handle_terminal_35(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> JUMPOP const
+    ↑(t≠1)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_36(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> cmp ( OPERAND CONDITIONOP OPERAND ) const
 **
@@ -892,10 +900,22 @@ handle_terminal_56(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONSOLEACTION -> l
 handle_terminal_57(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONSOLEACTION -> g
 **
 handle_terminal_58(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** JUMPOP -> jz
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_59(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** JUMPOP -> jnz
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_60(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** JUMPOP -> jump
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_61(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** INDEX -> . const
     ↑(t≠1)1
