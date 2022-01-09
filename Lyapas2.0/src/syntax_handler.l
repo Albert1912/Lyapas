@@ -468,8 +468,8 @@ handle_rule_28(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> inversion
 handle_rule_29(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> weighing
     *add_node(L1,L2,n,24,0/L1,L2,j)
 **
-    n⇒j
 handle_rule_30(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> ARITHMETICOP ARITHMETICOPERAND
+    n⇒j
 **
 handle_rule_31(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> * STAREXPR
     n⇒j
