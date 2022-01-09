@@ -435,7 +435,7 @@ handle_rule_19(L1,L2,L3,n/L1,L2,L3,j) *** NEXTEXPR -> EXPR NEXTEXPR
 handle_rule_20(L1,L2,L3,n/L1,L2,L3,j) *** NEXTEXPR -> ε
 **
 handle_rule_21(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> assign ASSIGNABLEOPERAND
-    n⇒j
+    *add_node(L1,L2,n,18,0/L1,L2,j)
 **
 handle_rule_22(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> OPERAND
     *add_node(L1,L2,n,0,0/L1,L2,j)
@@ -624,7 +624,7 @@ handle_rule_83(L1,L2,L3,n/L1,L2,L3,j) *** OPERAND -> time
     n⇒j
 **
 handle_rule_84(L1,L2,L3,n/L1,L2,L3,j) *** ASSIGNABLEOPERAND -> id
-    n⇒j
+    *add_node(L1,L2,n,6,0/L1,L2,j)
 **
 handle_rule_85(L1,L2,L3,n/L1,L2,L3,j) *** ASSIGNABLEOPERAND -> complex INDEX
     n⇒j
@@ -882,6 +882,10 @@ handle_terminal_82(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> singleconst
 handle_terminal_83(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> time
 **
 handle_terminal_84(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> id
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_85(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> complex INDEX
 **
