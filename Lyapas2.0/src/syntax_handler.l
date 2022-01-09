@@ -528,7 +528,9 @@ handle_rule_46(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXSLASHEXPR -> INDEX
     n⇒j
 **
 handle_rule_47(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXEXPR -> + complex ( const )
-    n⇒j
+    *add_node(L1,L2,n,35,0/L1,L2,j)
+    *add_node(L1,L2,j,7,0/L1,L2,x)
+    *add_node(L1,L2,j,9,0/L1,L2,x)
 **
 handle_rule_48(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXEXPR -> zeroing complex
     n⇒j
@@ -859,6 +861,16 @@ handle_terminal_45(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXSLASHEXPR -> CONSOL
 handle_terminal_46(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXSLASHEXPR -> INDEX
 **
 handle_terminal_47(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> + complex ( const )
+    ↑(t≠1)1
+    *get_child_node_index(L1,L2,n,0/c)
+    *get_node_info(L1,L2,c/j,v)
+    *update_node_info(L1,L2,c,j,i/)
+§1
+    ↑(t≠3)2
+    *get_child_node_index(L1,L2,n,1/c)
+    *get_node_info(L1,L2,c/j,v)
+    *update_node_info(L1,L2,c,j,i/)
+§2
 **
 handle_terminal_48(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> zeroing complex
 **
