@@ -4,7 +4,7 @@
 *** L2 - tree nodes
 ********************************************************************
 init_tree(L1,L2/L1,L2)
-    *init_fixed_size(2/L1) OQ2
+    *init_fixed_size(3/L1) OQ2
 **
 ********************************************************************
 *** add node
@@ -17,7 +17,7 @@ init_tree(L1,L2/L1,L2)
 ********************************************************************
 add_node(L1,L2,p,i,v/L1,L2,n)
     Q2⇒m⇒k+2⇒Q2 i⇒L2k ∆k v⇒L2k *** add node
-    @+L3(2) 2⇒Q3 m⇒L3.0 0⇒L3.1
+    @+L3(3) 3⇒Q3 m⇒L3.0 0⇒L3.1 p⇒L3.2
     *add_fixed_size(L1,L3/r)  *** add node metadata
     ↑(m=0)1
 
@@ -45,6 +45,18 @@ get_node_info(L1,L2,n/i,v)
     L2s⇒i ∆s L2s⇒v
 **
 ********************************************************************
+*** update node info
+*** L1 - metadata
+*** L2 - tree nodes
+*** n - node index
+*** i - id
+*** v - value
+********************************************************************
+update_node_info(L1,L2,n,i,v/)
+    *get_field_fixed_size(L1,n,0/s,r)
+    i⇒L2s ∆s v⇒L2s
+**
+********************************************************************
 *** get node child count
 *** L1 - metadata
 *** L2 - tree nodes
@@ -55,7 +67,7 @@ get_node_child_count(L1,L2,n/c)
     *get_field_fixed_size(L1,n,1/c,r)
 **
 ********************************************************************
-*** get child node info
+*** get child node index
 *** L1 - metadata
 *** L2 - tree nodes
 *** p - parent
@@ -68,6 +80,16 @@ get_child_node_index(L1,L2,p,j/i)
     *get_field_fixed_size(L1,p,0/s,r)
     s+2+j⇒s L2s⇒i
 §1
+**
+********************************************************************
+*** get parent node index
+*** L1 - metadata
+*** L2 - tree nodes
+*** n - node
+*** p - parent index
+********************************************************************
+get_parent_node_index(L1,L2,n/p)
+    *get_field_fixed_size(L1,n,2/p,r)
 **
 ********************************************************************
 *** fix starts after append node
