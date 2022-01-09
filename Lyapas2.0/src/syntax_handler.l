@@ -533,7 +533,8 @@ handle_rule_47(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXEXPR -> + complex ( const )
     *add_node(L1,L2,j,9,0/L1,L2,x)
 **
 handle_rule_48(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXEXPR -> zeroing complex
-    n⇒j
+    *add_node(L1,L2,n,36,0/L1,L2,x)
+    *add_node(L1,L2,x,7,0/L1,L2,j)
 **
 handle_rule_49(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXEXPR -> string g complex
     n⇒j
@@ -873,6 +874,10 @@ handle_terminal_47(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> + complex (
 §2
 **
 handle_terminal_48(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> zeroing complex
+    ↑(t≠1)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_49(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> string g complex
 **
