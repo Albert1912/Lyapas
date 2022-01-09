@@ -55,6 +55,7 @@ lex(F1/F2,L3)
     *get_random(F1,j/r,l,F4) 40⇒i r↦3
     *get_time(F1,j/r,l,F4) 41⇒i r↦3
     *get_string(F1,j/r,l,F4) 42⇒i r↦3
+    *get_swap(F1,j/r,l,F4) 44⇒i r↦3
 
     @+F5(50) @'[LEXICAL ERROR] Unexpected token at position '>F5 *write(F5/)
     *writev_line(j/) →4
@@ -305,6 +306,10 @@ lex(F1/F2,L3)
 ********************************************************************
 ~get_ret(F1,p/r,l,F2)
     @+F3(4) @'**'>F3 *get_entry(F1,p,F3/r,l,F2)
+    **
+********************************************************************
+~get_swap(F1,p/r,l,F2)
+    @+F3(4) @'⇔'>F3 *get_entry(F1,p,F3/r,l,F2)
     **
 ********************************************************************
 ~get_length(F1,p/r,l,F2)
