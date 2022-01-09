@@ -469,7 +469,7 @@ handle_rule_29(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> weighing
     *add_node(L1,L2,n,24,0/L1,L2,j)
 **
 handle_rule_30(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> ARITHMETICOP ARITHMETICOPERAND
-    n⇒j
+    *add_node(L1,L2,n,0,0/L1,L2,j)
 **
 handle_rule_31(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> * STAREXPR
     n⇒j
@@ -499,10 +499,11 @@ handle_rule_39(L1,L2,L3,n/L1,L2,L3,j) *** STAREXPR -> name ( CALLINARGS / CALLOU
     n⇒j
 **
 handle_rule_40(L1,L2,L3,n/L1,L2,L3,j) *** STAREXPR -> OPERAND
-    n⇒j
+    *add_node(L1,L2,n,12,0/L1,L2,j)
 **
 handle_rule_41(L1,L2,L3,n/L1,L2,L3,j) *** STAREXPR -> complex INDEX
-    n⇒j
+    *add_node(L1,L2,n,12,0/L1,L2,x)
+    *add_node(L1,L2,x,8,0/L1,L2,j)
 **
 handle_rule_42(L1,L2,L3,n/L1,L2,L3,j) *** SLASHEXPR -> complex COMPLEXSLASHEXPR
     n⇒j
@@ -573,27 +574,35 @@ handle_rule_62(L1,L2,L3,n/L1,L2,L3,j) *** INDEX -> id
     *add_node(L1,L2,n,6,0/L1,L2,j)
 **
 handle_rule_63(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOP -> +
+    *update_node_info(L1,L2,n,10,0/)
     n⇒j
 **
 handle_rule_64(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOP -> -
+    *update_node_info(L1,L2,n,11,0/)
     n⇒j
 **
 handle_rule_65(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOP -> ;
+    *update_node_info(L1,L2,n,14,0/)
     n⇒j
 **
 handle_rule_66(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOP -> and
+    *update_node_info(L1,L2,n,16,0/)
     n⇒j
 **
 handle_rule_67(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOP -> or
+    *update_node_info(L1,L2,n,15,0/)
     n⇒j
 **
 handle_rule_68(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOP -> xor
+    *update_node_info(L1,L2,n,17,0/)
     n⇒j
 **
 handle_rule_69(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOP -> g
+    *update_node_info(L1,L2,n,27,0/)
     n⇒j
 **
 handle_rule_70(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOP -> l
+    *update_node_info(L1,L2,n,26,0/)
     n⇒j
 **
 handle_rule_71(L1,L2,L3,n/L1,L2,L3,j) *** CONDITIONOP -> e
@@ -696,8 +705,10 @@ handle_rule_103(L1,L2,L3,n/L1,L2,L3,j) *** CALLINDEX -> ε
     n⇒j
 **
 handle_rule_104(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOPERAND -> OPERAND
+    n⇒j
 **
 handle_rule_105(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOPERAND -> complex INDEX
+    *add_node(L1,L2,n,8,0/L1,L2,j)
 **
 handle_terminal_0(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SUBPROGRAM -> HEAD BODY RET SUBPROGRAM
 **
@@ -810,6 +821,10 @@ handle_terminal_39(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** STAREXPR -> name ( CALLINA
 handle_terminal_40(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** STAREXPR -> OPERAND
 **
 handle_terminal_41(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** STAREXPR -> complex INDEX
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_42(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SLASHEXPR -> complex COMPLEXSLASHEXPR
 **
@@ -986,4 +1001,9 @@ handle_terminal_103(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINDEX -> ε
 handle_terminal_104(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOPERAND -> OPERAND
 **
 handle_terminal_105(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOPERAND -> complex INDEX
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
+**
 **
