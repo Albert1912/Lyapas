@@ -59,7 +59,7 @@ OQ3 111@>L3 45@>L3
 *add_rule(L1,L2,L3,0/L1,L2) *** EXPR -> lowerone
 OQ3 111@>L3 26@>L3
 *add_rule(L1,L2,L3,0/L1,L2) *** EXPR -> inversion
-OQ3 111@>L3 47@>L3
+OQ3 111@>L3 27@>L3
 *add_rule(L1,L2,L3,0/L1,L2) *** EXPR -> weighing
 OQ3 111@>L3 117@>L3 114@>L3
 *add_rule(L1,L2,L3,0/L1,L2) *** EXPR -> ARITHMETICOP OPERAND
