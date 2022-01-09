@@ -20,13 +20,13 @@ fill_test_data(/L1,L2)
 ********************************************************************
 left_output(L1,L2,n/)
     *get_node_child_count(L1,L2,n/c)
+    /'Current node: '>C *writev_line(n/)
+    /'Child count: '>C *writev_line(c/)
     Oj
 §1
     ↑(j≥c)2
     *get_child_node_index(L1,L2,n,j/i)
-    ***/'Current node: '>C *writev_line(n/)
-    ***/'Child count: '>C *writev_line(c/)
-    ***/'Child index: '>C *writev_line(i/)
+    /'Child index: '>C *writev_line(i/)
     *left_output(L1,L2,i/)
     ∆j →1
 §2
