@@ -453,7 +453,7 @@ handle_rule_26(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> maximize ASSIGNABLEOPERAND
     *add_node(L1,L2,n,21,0/L1,L2,j)
 **
 handle_rule_27(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> lowerone
-    n⇒j
+    *add_node(L1,L2,n,22,0/L1,L2,j)
 **
 handle_rule_28(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> inversion
     n⇒j
