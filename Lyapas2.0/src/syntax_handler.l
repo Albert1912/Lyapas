@@ -506,18 +506,23 @@ handle_rule_41(L1,L2,L3,n/L1,L2,L3,j) *** STAREXPR -> complex INDEX
     *add_node(L1,L2,x,8,0/L1,L2,j)
 **
 handle_rule_42(L1,L2,L3,n/L1,L2,L3,j) *** SLASHEXPR -> complex COMPLEXSLASHEXPR
-    n⇒j
+    *add_node(L1,L2,n,0,0/L1,L2,x)
+    *add_node(L1,L2,x,0,0/L1,L2,j)
 **
 handle_rule_43(L1,L2,L3,n/L1,L2,L3,j) *** SLASHEXPR -> string CONSOLEACTION console
     n⇒j
 **
 handle_rule_44(L1,L2,L3,n/L1,L2,L3,j) *** SLASHEXPR -> OPERAND
-    n⇒j
+    *add_node(L1,L2,n,13,0/L1,L2,j)
 **
 handle_rule_45(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXSLASHEXPR -> CONSOLEACTION console
     n⇒j
 **
 handle_rule_46(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXSLASHEXPR -> INDEX
+    *get_node_info(L1,L2,n/x,v)
+    *update_node_info(L1,L2,n,8,v/)
+    *get_parent_node_index(L1,L2,n/p)
+    *update_node_info(L1,L2,p,13,0/)
     n⇒j
 **
 handle_rule_47(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXEXPR -> + complex ( const )
@@ -827,6 +832,10 @@ handle_terminal_41(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** STAREXPR -> complex INDEX
 §1
 **
 handle_terminal_42(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SLASHEXPR -> complex COMPLEXSLASHEXPR
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_43(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SLASHEXPR -> string CONSOLEACTION console
 **
