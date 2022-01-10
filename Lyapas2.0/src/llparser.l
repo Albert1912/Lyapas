@@ -29,11 +29,11 @@ llparse(F3,L4,L5,L6,L7,L8/L20,L21,r)
     @'apply: '>F80 *write(F80/) OQ80 *writev_line(j/)
     *handle_applied_rule(L20,L21,L22,j/L20,L21,L22)
     *stack_pop(L10,1/L10,L11)
-    *get_rule_by_id(L5,L6,j/L3,r) r↪2
-    *stack_push(L10,L3/L10) →1
+    *get_rule_by_id(L5,L6,j/L11,r) r↪2
+    *stack_push(L10,L11/L10) →1
 §11
     @'accept: '>F80 *write(F80/) OQ80 *writev_line(a/)
-    *handle_accepted_terminal(L20,L21,L22,F3,L4,i/L20,L21,L22)
+    *handle_accepted_terminal(L20,L21,L22,i/L20,L21,L22)
     ∆i *stack_pop(L10,1/L10,L11) →1 *** X == a
 §2
     *** error
@@ -80,4 +80,4 @@ llparse(F3,L4,L5,L6,L7,L8/L20,L21,r)
 #write(F1/)
 
 #handle_applied_rule(L1,L2,L3,i/L1,L2,L3)
-#handle_accepted_terminal(L1,L2,L3,F4,L5,i/L1,L2,L3)
+#handle_accepted_terminal(L1,L2,L3,i/L1,L2,L3)

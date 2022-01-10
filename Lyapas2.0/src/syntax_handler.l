@@ -145,124 +145,122 @@ free_context_stack(L1/L1)
 *** L1 - tree metadata
 *** L2 - tree nodes
 *** L3 - context stack
-*** F4 - token array
-*** L5 - token array metadata
 *** i - accepted terminal index
 ********************************************************************
-handle_accepted_terminal(L1,L2,L3,F4,L5,i/L1,L2,L3)
+handle_accepted_terminal(L1,L2,L3,i/L1,L2,L3)
     Q3⇒n-3⇒r L3r⇒r
     Q3⇒n-2⇒t L3t⇒t
     Q3⇒n-4⇒l L3l⇒l
-§0 ↑(r≠0)1 *handle_terminal_0(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§1 ↑(r≠1)2 *handle_terminal_1(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§2 ↑(r≠2)3 *handle_terminal_2(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§3 ↑(r≠3)4 *handle_terminal_3(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§4 ↑(r≠4)5 *handle_terminal_4(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§5 ↑(r≠5)6 *handle_terminal_5(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§6 ↑(r≠6)7 *handle_terminal_6(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§7 ↑(r≠7)8 *handle_terminal_7(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§8 ↑(r≠8)9 *handle_terminal_8(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§9 ↑(r≠9)10 *handle_terminal_9(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§10 ↑(r≠10)11 *handle_terminal_10(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§11 ↑(r≠11)12 *handle_terminal_11(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§12 ↑(r≠12)13 *handle_terminal_12(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§13 ↑(r≠13)14 *handle_terminal_13(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§14 ↑(r≠14)15 *handle_terminal_14(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§15 ↑(r≠15)16 *handle_terminal_15(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§16 ↑(r≠16)17 *handle_terminal_16(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§17 ↑(r≠17)18 *handle_terminal_17(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§18 ↑(r≠18)19 *handle_terminal_18(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§19 ↑(r≠19)20 *handle_terminal_19(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§20 ↑(r≠20)21 *handle_terminal_20(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§21 ↑(r≠21)22 *handle_terminal_21(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§22 ↑(r≠22)23 *handle_terminal_22(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§23 ↑(r≠23)24 *handle_terminal_23(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§24 ↑(r≠24)25 *handle_terminal_24(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§25 ↑(r≠25)26 *handle_terminal_25(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§26 ↑(r≠26)27 *handle_terminal_26(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§27 ↑(r≠27)28 *handle_terminal_27(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§28 ↑(r≠28)29 *handle_terminal_28(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§29 ↑(r≠29)30 *handle_terminal_29(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§30 ↑(r≠30)31 *handle_terminal_30(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§31 ↑(r≠31)32 *handle_terminal_31(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§32 ↑(r≠32)33 *handle_terminal_32(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§33 ↑(r≠33)34 *handle_terminal_33(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§34 ↑(r≠34)35 *handle_terminal_34(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§35 ↑(r≠35)36 *handle_terminal_35(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§36 ↑(r≠36)37 *handle_terminal_36(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§37 ↑(r≠37)38 *handle_terminal_37(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§38 ↑(r≠38)39 *handle_terminal_38(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§39 ↑(r≠39)40 *handle_terminal_39(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§40 ↑(r≠40)41 *handle_terminal_40(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§41 ↑(r≠41)42 *handle_terminal_41(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§42 ↑(r≠42)43 *handle_terminal_42(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§43 ↑(r≠43)44 *handle_terminal_43(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§44 ↑(r≠44)45 *handle_terminal_44(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§45 ↑(r≠45)46 *handle_terminal_45(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§46 ↑(r≠46)47 *handle_terminal_46(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§47 ↑(r≠47)48 *handle_terminal_47(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§48 ↑(r≠48)49 *handle_terminal_48(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§49 ↑(r≠49)50 *handle_terminal_49(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§50 ↑(r≠50)51 *handle_terminal_50(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§51 ↑(r≠51)52 *handle_terminal_51(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§52 ↑(r≠52)53 *handle_terminal_52(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§53 ↑(r≠53)54 *handle_terminal_53(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§54 ↑(r≠54)55 *handle_terminal_54(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§55 ↑(r≠55)56 *handle_terminal_55(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§56 ↑(r≠56)57 *handle_terminal_56(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§57 ↑(r≠57)58 *handle_terminal_57(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§58 ↑(r≠58)59 *handle_terminal_58(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§59 ↑(r≠59)60 *handle_terminal_59(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§60 ↑(r≠60)61 *handle_terminal_60(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§61 ↑(r≠61)62 *handle_terminal_61(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§62 ↑(r≠62)63 *handle_terminal_62(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§63 ↑(r≠63)64 *handle_terminal_63(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§64 ↑(r≠64)65 *handle_terminal_64(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§65 ↑(r≠65)66 *handle_terminal_65(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§66 ↑(r≠66)67 *handle_terminal_66(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§67 ↑(r≠67)68 *handle_terminal_67(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§68 ↑(r≠68)69 *handle_terminal_68(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§69 ↑(r≠69)70 *handle_terminal_69(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§70 ↑(r≠70)71 *handle_terminal_70(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§71 ↑(r≠71)72 *handle_terminal_71(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§72 ↑(r≠72)73 *handle_terminal_72(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§73 ↑(r≠73)74 *handle_terminal_73(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§74 ↑(r≠74)75 *handle_terminal_74(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§75 ↑(r≠75)76 *handle_terminal_75(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§76 ↑(r≠76)77 *handle_terminal_76(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§77 ↑(r≠77)78 *handle_terminal_77(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§78 ↑(r≠78)79 *handle_terminal_78(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§79 ↑(r≠79)80 *handle_terminal_79(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§80 ↑(r≠80)81 *handle_terminal_80(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§81 ↑(r≠81)82 *handle_terminal_81(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§82 ↑(r≠82)83 *handle_terminal_82(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§83 ↑(r≠83)84 *handle_terminal_83(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§84 ↑(r≠84)85 *handle_terminal_84(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§85 ↑(r≠85)86 *handle_terminal_85(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§86 ↑(r≠86)87 *handle_terminal_86(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§87 ↑(r≠87)88 *handle_terminal_87(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§88 ↑(r≠88)89 *handle_terminal_88(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§89 ↑(r≠89)90 *handle_terminal_89(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§90 ↑(r≠90)91 *handle_terminal_90(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§91 ↑(r≠91)92 *handle_terminal_91(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§92 ↑(r≠92)93 *handle_terminal_92(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§93 ↑(r≠93)94 *handle_terminal_93(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§94 ↑(r≠94)95 *handle_terminal_94(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§95 ↑(r≠95)96 *handle_terminal_95(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§96 ↑(r≠96)97 *handle_terminal_96(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§97 ↑(r≠97)98 *handle_terminal_97(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§98 ↑(r≠98)99 *handle_terminal_98(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§99 ↑(r≠99)100 *handle_terminal_99(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§100 ↑(r≠100)101 *handle_terminal_100(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§101 ↑(r≠101)102 *handle_terminal_101(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§102 ↑(r≠102)103 *handle_terminal_102(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§103 ↑(r≠103)104 *handle_terminal_103(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§104 ↑(r≠104)105 *handle_terminal_104(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§105 ↑(r≠105)106 *handle_terminal_105(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§106 ↑(r≠106)107 *handle_terminal_106(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§107 ↑(r≠107)108 *handle_terminal_107(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§108 ↑(r≠108)109 *handle_terminal_108(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
-§109 ↑(r≠109)110 *handle_terminal_109(L1,L2,L3,F4,L5,i,t,l/L1,L2,L3)→110
+§0 ↑(r≠0)1 *handle_terminal_0(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§1 ↑(r≠1)2 *handle_terminal_1(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§2 ↑(r≠2)3 *handle_terminal_2(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§3 ↑(r≠3)4 *handle_terminal_3(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§4 ↑(r≠4)5 *handle_terminal_4(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§5 ↑(r≠5)6 *handle_terminal_5(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§6 ↑(r≠6)7 *handle_terminal_6(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§7 ↑(r≠7)8 *handle_terminal_7(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§8 ↑(r≠8)9 *handle_terminal_8(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§9 ↑(r≠9)10 *handle_terminal_9(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§10 ↑(r≠10)11 *handle_terminal_10(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§11 ↑(r≠11)12 *handle_terminal_11(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§12 ↑(r≠12)13 *handle_terminal_12(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§13 ↑(r≠13)14 *handle_terminal_13(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§14 ↑(r≠14)15 *handle_terminal_14(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§15 ↑(r≠15)16 *handle_terminal_15(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§16 ↑(r≠16)17 *handle_terminal_16(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§17 ↑(r≠17)18 *handle_terminal_17(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§18 ↑(r≠18)19 *handle_terminal_18(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§19 ↑(r≠19)20 *handle_terminal_19(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§20 ↑(r≠20)21 *handle_terminal_20(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§21 ↑(r≠21)22 *handle_terminal_21(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§22 ↑(r≠22)23 *handle_terminal_22(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§23 ↑(r≠23)24 *handle_terminal_23(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§24 ↑(r≠24)25 *handle_terminal_24(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§25 ↑(r≠25)26 *handle_terminal_25(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§26 ↑(r≠26)27 *handle_terminal_26(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§27 ↑(r≠27)28 *handle_terminal_27(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§28 ↑(r≠28)29 *handle_terminal_28(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§29 ↑(r≠29)30 *handle_terminal_29(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§30 ↑(r≠30)31 *handle_terminal_30(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§31 ↑(r≠31)32 *handle_terminal_31(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§32 ↑(r≠32)33 *handle_terminal_32(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§33 ↑(r≠33)34 *handle_terminal_33(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§34 ↑(r≠34)35 *handle_terminal_34(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§35 ↑(r≠35)36 *handle_terminal_35(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§36 ↑(r≠36)37 *handle_terminal_36(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§37 ↑(r≠37)38 *handle_terminal_37(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§38 ↑(r≠38)39 *handle_terminal_38(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§39 ↑(r≠39)40 *handle_terminal_39(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§40 ↑(r≠40)41 *handle_terminal_40(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§41 ↑(r≠41)42 *handle_terminal_41(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§42 ↑(r≠42)43 *handle_terminal_42(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§43 ↑(r≠43)44 *handle_terminal_43(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§44 ↑(r≠44)45 *handle_terminal_44(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§45 ↑(r≠45)46 *handle_terminal_45(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§46 ↑(r≠46)47 *handle_terminal_46(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§47 ↑(r≠47)48 *handle_terminal_47(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§48 ↑(r≠48)49 *handle_terminal_48(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§49 ↑(r≠49)50 *handle_terminal_49(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§50 ↑(r≠50)51 *handle_terminal_50(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§51 ↑(r≠51)52 *handle_terminal_51(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§52 ↑(r≠52)53 *handle_terminal_52(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§53 ↑(r≠53)54 *handle_terminal_53(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§54 ↑(r≠54)55 *handle_terminal_54(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§55 ↑(r≠55)56 *handle_terminal_55(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§56 ↑(r≠56)57 *handle_terminal_56(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§57 ↑(r≠57)58 *handle_terminal_57(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§58 ↑(r≠58)59 *handle_terminal_58(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§59 ↑(r≠59)60 *handle_terminal_59(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§60 ↑(r≠60)61 *handle_terminal_60(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§61 ↑(r≠61)62 *handle_terminal_61(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§62 ↑(r≠62)63 *handle_terminal_62(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§63 ↑(r≠63)64 *handle_terminal_63(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§64 ↑(r≠64)65 *handle_terminal_64(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§65 ↑(r≠65)66 *handle_terminal_65(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§66 ↑(r≠66)67 *handle_terminal_66(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§67 ↑(r≠67)68 *handle_terminal_67(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§68 ↑(r≠68)69 *handle_terminal_68(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§69 ↑(r≠69)70 *handle_terminal_69(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§70 ↑(r≠70)71 *handle_terminal_70(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§71 ↑(r≠71)72 *handle_terminal_71(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§72 ↑(r≠72)73 *handle_terminal_72(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§73 ↑(r≠73)74 *handle_terminal_73(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§74 ↑(r≠74)75 *handle_terminal_74(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§75 ↑(r≠75)76 *handle_terminal_75(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§76 ↑(r≠76)77 *handle_terminal_76(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§77 ↑(r≠77)78 *handle_terminal_77(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§78 ↑(r≠78)79 *handle_terminal_78(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§79 ↑(r≠79)80 *handle_terminal_79(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§80 ↑(r≠80)81 *handle_terminal_80(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§81 ↑(r≠81)82 *handle_terminal_81(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§82 ↑(r≠82)83 *handle_terminal_82(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§83 ↑(r≠83)84 *handle_terminal_83(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§84 ↑(r≠84)85 *handle_terminal_84(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§85 ↑(r≠85)86 *handle_terminal_85(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§86 ↑(r≠86)87 *handle_terminal_86(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§87 ↑(r≠87)88 *handle_terminal_87(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§88 ↑(r≠88)89 *handle_terminal_88(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§89 ↑(r≠89)90 *handle_terminal_89(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§90 ↑(r≠90)91 *handle_terminal_90(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§91 ↑(r≠91)92 *handle_terminal_91(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§92 ↑(r≠92)93 *handle_terminal_92(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§93 ↑(r≠93)94 *handle_terminal_93(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§94 ↑(r≠94)95 *handle_terminal_94(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§95 ↑(r≠95)96 *handle_terminal_95(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§96 ↑(r≠96)97 *handle_terminal_96(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§97 ↑(r≠97)98 *handle_terminal_97(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§98 ↑(r≠98)99 *handle_terminal_98(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§99 ↑(r≠99)100 *handle_terminal_99(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§100 ↑(r≠100)101 *handle_terminal_100(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§101 ↑(r≠101)102 *handle_terminal_101(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§102 ↑(r≠102)103 *handle_terminal_102(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§103 ↑(r≠103)104 *handle_terminal_103(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§104 ↑(r≠104)105 *handle_terminal_104(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§105 ↑(r≠105)106 *handle_terminal_105(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§106 ↑(r≠106)107 *handle_terminal_106(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§107 ↑(r≠107)108 *handle_terminal_107(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§108 ↑(r≠108)109 *handle_terminal_108(L1,L2,L3,i,t,l/L1,L2,L3)→110
+§109 ↑(r≠109)110 *handle_terminal_109(L1,L2,L3,i,t,l/L1,L2,L3)→110
 §110
     Q3-2⇒t L3t⇒x+1⇒L3t
     *free_context_stack(L3/L3)
@@ -762,158 +760,158 @@ handle_rule_108(L1,L2,L3,n/L1,L2,L3,j) *** RIGHTCONDITIONOPERAND -> OPERAND
 handle_rule_109(L1,L2,L3,n/L1,L2,L3,j) *** RIGHTCONDITIONOPERAND -> complex INDEX
     *add_node(L1,L2,n,8,0/L1,L2,j)
 **
-handle_terminal_0(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SUBPROGRAM -> HEAD BODY RET SUBPROGRAM
+handle_terminal_0(L1,L2,L3,i,t,n/L1,L2,L3) *** SUBPROGRAM -> HEAD BODY RET SUBPROGRAM
 **
-handle_terminal_1(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SUBPROGRAM -> ε
+handle_terminal_1(L1,L2,L3,i,t,n/L1,L2,L3) *** SUBPROGRAM -> ε
 **
-handle_terminal_2(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** RET -> **
+handle_terminal_2(L1,L2,L3,i,t,n/L1,L2,L3) *** RET -> **
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_3(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** HEAD -> NAME ( INARGS / OUTARGS )
+handle_terminal_3(L1,L2,L3,i,t,n/L1,L2,L3) *** HEAD -> NAME ( INARGS / OUTARGS )
 **
-handle_terminal_4(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NAME -> name
+handle_terminal_4(L1,L2,L3,i,t,n/L1,L2,L3) *** NAME -> name
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_5(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** INARGS -> INARG NEXTINARG
+handle_terminal_5(L1,L2,L3,i,t,n/L1,L2,L3) *** INARGS -> INARG NEXTINARG
 **
-handle_terminal_6(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** INARGS -> ε
+handle_terminal_6(L1,L2,L3,i,t,n/L1,L2,L3) *** INARGS -> ε
 **
-handle_terminal_7(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTINARG -> , INARG NEXTINARG
+handle_terminal_7(L1,L2,L3,i,t,n/L1,L2,L3) *** NEXTINARG -> , INARG NEXTINARG
 **
-handle_terminal_8(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTINARG -> ε
+handle_terminal_8(L1,L2,L3,i,t,n/L1,L2,L3) *** NEXTINARG -> ε
 **
-handle_terminal_9(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** INARG -> id
+handle_terminal_9(L1,L2,L3,i,t,n/L1,L2,L3) *** INARG -> id
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_10(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** INARG -> complex
+handle_terminal_10(L1,L2,L3,i,t,n/L1,L2,L3) *** INARG -> complex
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_11(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OUTARGS -> OUTARG NEXTOUTARG
+handle_terminal_11(L1,L2,L3,i,t,n/L1,L2,L3) *** OUTARGS -> OUTARG NEXTOUTARG
 **
-handle_terminal_12(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OUTARGS -> ε
+handle_terminal_12(L1,L2,L3,i,t,n/L1,L2,L3) *** OUTARGS -> ε
 **
-handle_terminal_13(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTOUTARG -> , OUTARG NEXTOUTARG
+handle_terminal_13(L1,L2,L3,i,t,n/L1,L2,L3) *** NEXTOUTARG -> , OUTARG NEXTOUTARG
 **
-handle_terminal_14(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTOUTARG -> ε
+handle_terminal_14(L1,L2,L3,i,t,n/L1,L2,L3) *** NEXTOUTARG -> ε
 **
-handle_terminal_15(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OUTARG -> id
+handle_terminal_15(L1,L2,L3,i,t,n/L1,L2,L3) *** OUTARG -> id
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_16(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OUTARG -> complex
+handle_terminal_16(L1,L2,L3,i,t,n/L1,L2,L3) *** OUTARG -> complex
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_17(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** BODY -> EXPR NEXTEXPR
+handle_terminal_17(L1,L2,L3,i,t,n/L1,L2,L3) *** BODY -> EXPR NEXTEXPR
 **
-handle_terminal_18(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** BODY -> ε
+handle_terminal_18(L1,L2,L3,i,t,n/L1,L2,L3) *** BODY -> ε
 **
-handle_terminal_19(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTEXPR -> EXPR NEXTEXPR
+handle_terminal_19(L1,L2,L3,i,t,n/L1,L2,L3) *** NEXTEXPR -> EXPR NEXTEXPR
 **
-handle_terminal_20(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTEXPR -> ε
+handle_terminal_20(L1,L2,L3,i,t,n/L1,L2,L3) *** NEXTEXPR -> ε
 **
-handle_terminal_21(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> assign ASSIGNABLEOPERAND
+handle_terminal_21(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> assign ASSIGNABLEOPERAND
 **
-handle_terminal_22(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> OPERAND
+handle_terminal_22(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> OPERAND
 **
-handle_terminal_23(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> complex INDEX
+handle_terminal_23(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> complex INDEX
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_24(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> swap ( SWAPEXPR )
+handle_terminal_24(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> swap ( SWAPEXPR )
 **
-handle_terminal_25(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> zeroing ASSIGNABLEOPERAND
+handle_terminal_25(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> zeroing ASSIGNABLEOPERAND
 **
-handle_terminal_26(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> maximize ASSIGNABLEOPERAND
+handle_terminal_26(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> maximize ASSIGNABLEOPERAND
 **
-handle_terminal_27(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> lowerone
+handle_terminal_27(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> lowerone
 **
-handle_terminal_28(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> inversion
+handle_terminal_28(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> inversion
 **
-handle_terminal_29(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> weighing
+handle_terminal_29(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> weighing
 **
-handle_terminal_30(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> ARITHMETICOP ARITHMETICOPERAND
+handle_terminal_30(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> ARITHMETICOP ARITHMETICOPERAND
 **
-handle_terminal_31(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> * STAREXPR
+handle_terminal_31(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> * STAREXPR
 **
-handle_terminal_32(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> / SLASHEXPR
+handle_terminal_32(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> / SLASHEXPR
 **
-handle_terminal_33(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> inc ASSIGNABLEOPERAND
+handle_terminal_33(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> inc ASSIGNABLEOPERAND
 **
-handle_terminal_34(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> dec ASSIGNABLEOPERAND
+handle_terminal_34(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> dec ASSIGNABLEOPERAND
 **
-handle_terminal_35(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> JUMPOP const
+handle_terminal_35(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> JUMPOP const
     ↑(t≠1)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_36(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> cmp ( LEFTCONDITIONOPERAND CONDITIONOP RIGHTCONDITIONOPERAND ) const
+handle_terminal_36(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> cmp ( LEFTCONDITIONOPERAND CONDITIONOP RIGHTCONDITIONOPERAND ) const
     ↑(t≠6)1
     *add_node(L1,L2,n,9,i/L1,L2,x)
 §1
 **
-handle_terminal_37(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> par const
+handle_terminal_37(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> par const
     ↑(t≠1)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_38(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> at COMPLEXEXPR
+handle_terminal_38(L1,L2,L3,i,t,n/L1,L2,L3) *** EXPR -> at COMPLEXEXPR
 **
-handle_terminal_39(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** STAREXPR -> name ( CALLINARGS / CALLOUTARGS )
+handle_terminal_39(L1,L2,L3,i,t,n/L1,L2,L3) *** STAREXPR -> name ( CALLINARGS / CALLOUTARGS )
     ↑(t≠0)1
     *get_child_node_index(L1,L2,n,0/c)
     *get_node_info(L1,L2,c/j,v)
     *update_node_info(L1,L2,c,j,i/)
 §1
 **
-handle_terminal_40(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** STAREXPR -> OPERAND
+handle_terminal_40(L1,L2,L3,i,t,n/L1,L2,L3) *** STAREXPR -> OPERAND
 **
-handle_terminal_41(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** STAREXPR -> complex INDEX
+handle_terminal_41(L1,L2,L3,i,t,n/L1,L2,L3) *** STAREXPR -> complex INDEX
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_42(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SLASHEXPR -> complex COMPLEXSLASHEXPR
+handle_terminal_42(L1,L2,L3,i,t,n/L1,L2,L3) *** SLASHEXPR -> complex COMPLEXSLASHEXPR
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_43(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SLASHEXPR -> string CONSOLEACTION console
+handle_terminal_43(L1,L2,L3,i,t,n/L1,L2,L3) *** SLASHEXPR -> string CONSOLEACTION console
     ↑(t≠0)1
     *get_child_node_index(L1,L2,n,0/c)
     *get_node_info(L1,L2,c/j,v)
     *update_node_info(L1,L2,c,j,i/)
 §1
 **
-handle_terminal_44(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SLASHEXPR -> OPERAND
+handle_terminal_44(L1,L2,L3,i,t,n/L1,L2,L3) *** SLASHEXPR -> OPERAND
 **
-handle_terminal_45(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXSLASHEXPR -> CONSOLEACTION console
+handle_terminal_45(L1,L2,L3,i,t,n/L1,L2,L3) *** COMPLEXSLASHEXPR -> CONSOLEACTION console
 **
-handle_terminal_46(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXSLASHEXPR -> INDEX
+handle_terminal_46(L1,L2,L3,i,t,n/L1,L2,L3) *** COMPLEXSLASHEXPR -> INDEX
 **
-handle_terminal_47(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> + complex ( const )
+handle_terminal_47(L1,L2,L3,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> + complex ( const )
     ↑(t≠1)1
     *get_child_node_index(L1,L2,n,0/c)
     *get_node_info(L1,L2,c/j,v)
@@ -925,13 +923,13 @@ handle_terminal_47(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> + complex (
     *update_node_info(L1,L2,c,j,i/)
 §2
 **
-handle_terminal_48(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> zeroing complex
+handle_terminal_48(L1,L2,L3,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> zeroing complex
     ↑(t≠1)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_49(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> string g complex
+handle_terminal_49(L1,L2,L3,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> string g complex
     ↑(t≠0)1
     *get_child_node_index(L1,L2,n,0/c)
     *get_node_info(L1,L2,c/j,v)
@@ -943,257 +941,257 @@ handle_terminal_49(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** COMPLEXEXPR -> string g co
     *update_node_info(L1,L2,c,j,i/)
 §2
 **
-handle_terminal_50(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPEXPR -> id id
+handle_terminal_50(L1,L2,L3,i,t,n/L1,L2,L3) *** SWAPEXPR -> id id
     *get_child_node_index(L1,L2,n,t/c)
     *get_node_info(L1,L2,c/j,v)
     *update_node_info(L1,L2,c,j,i/)
 **
-handle_terminal_51(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPEXPR -> complex SWAPFIRST SWAPSECOND
+handle_terminal_51(L1,L2,L3,i,t,n/L1,L2,L3) *** SWAPEXPR -> complex SWAPFIRST SWAPSECOND
     ↑(t≠0)1
     *get_child_node_index(L1,L2,n,0/c)
     *get_node_info(L1,L2,c/j,v)
     *update_node_info(L1,L2,c,j,i/)
 §1
 **
-handle_terminal_52(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPFIRST -> id
+handle_terminal_52(L1,L2,L3,i,t,n/L1,L2,L3) *** SWAPFIRST -> id
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,6,i/)
 §1
 **
-handle_terminal_53(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPFIRST -> . const
+handle_terminal_53(L1,L2,L3,i,t,n/L1,L2,L3) *** SWAPFIRST -> . const
     ↑(t≠1)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,9,i/)
 §1
 **
-handle_terminal_54(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPSECOND -> id
+handle_terminal_54(L1,L2,L3,i,t,n/L1,L2,L3) *** SWAPSECOND -> id
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,6,i/)
 §1
 **
-handle_terminal_55(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPSECOND -> const
+handle_terminal_55(L1,L2,L3,i,t,n/L1,L2,L3) *** SWAPSECOND -> const
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,9,i/)
 §1
 **
-handle_terminal_56(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONSOLEACTION -> l
+handle_terminal_56(L1,L2,L3,i,t,n/L1,L2,L3) *** CONSOLEACTION -> l
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_57(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONSOLEACTION -> g
+handle_terminal_57(L1,L2,L3,i,t,n/L1,L2,L3) *** CONSOLEACTION -> g
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_58(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** JUMPOP -> jz
+handle_terminal_58(L1,L2,L3,i,t,n/L1,L2,L3) *** JUMPOP -> jz
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_59(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** JUMPOP -> jnz
+handle_terminal_59(L1,L2,L3,i,t,n/L1,L2,L3) *** JUMPOP -> jnz
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_60(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** JUMPOP -> jump
+handle_terminal_60(L1,L2,L3,i,t,n/L1,L2,L3) *** JUMPOP -> jump
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_61(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** INDEX -> . const
+handle_terminal_61(L1,L2,L3,i,t,n/L1,L2,L3) *** INDEX -> . const
     ↑(t≠1)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_62(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** INDEX -> id
+handle_terminal_62(L1,L2,L3,i,t,n/L1,L2,L3) *** INDEX -> id
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_63(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOP -> +
+handle_terminal_63(L1,L2,L3,i,t,n/L1,L2,L3) *** ARITHMETICOP -> +
 **
-handle_terminal_64(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOP -> -
+handle_terminal_64(L1,L2,L3,i,t,n/L1,L2,L3) *** ARITHMETICOP -> -
 **
-handle_terminal_65(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOP -> ;
+handle_terminal_65(L1,L2,L3,i,t,n/L1,L2,L3) *** ARITHMETICOP -> ;
 **
-handle_terminal_66(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOP -> and
+handle_terminal_66(L1,L2,L3,i,t,n/L1,L2,L3) *** ARITHMETICOP -> and
 **
-handle_terminal_67(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOP -> or
+handle_terminal_67(L1,L2,L3,i,t,n/L1,L2,L3) *** ARITHMETICOP -> or
 **
-handle_terminal_68(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOP -> xor
+handle_terminal_68(L1,L2,L3,i,t,n/L1,L2,L3) *** ARITHMETICOP -> xor
 **
-handle_terminal_69(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOP -> g
+handle_terminal_69(L1,L2,L3,i,t,n/L1,L2,L3) *** ARITHMETICOP -> g
 **
-handle_terminal_70(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOP -> l
+handle_terminal_70(L1,L2,L3,i,t,n/L1,L2,L3) *** ARITHMETICOP -> l
 **
-handle_terminal_71(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONDITIONOP -> e
+handle_terminal_71(L1,L2,L3,i,t,n/L1,L2,L3) *** CONDITIONOP -> e
 **
-handle_terminal_72(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONDITIONOP -> ne
+handle_terminal_72(L1,L2,L3,i,t,n/L1,L2,L3) *** CONDITIONOP -> ne
 **
-handle_terminal_73(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONDITIONOP -> g
+handle_terminal_73(L1,L2,L3,i,t,n/L1,L2,L3) *** CONDITIONOP -> g
 **
-handle_terminal_74(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONDITIONOP -> ge
+handle_terminal_74(L1,L2,L3,i,t,n/L1,L2,L3) *** CONDITIONOP -> ge
 **
-handle_terminal_75(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONDITIONOP -> l
+handle_terminal_75(L1,L2,L3,i,t,n/L1,L2,L3) *** CONDITIONOP -> l
 **
-handle_terminal_76(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONDITIONOP -> le
+handle_terminal_76(L1,L2,L3,i,t,n/L1,L2,L3) *** CONDITIONOP -> le
 **
-handle_terminal_77(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> id
+handle_terminal_77(L1,L2,L3,i,t,n/L1,L2,L3) *** OPERAND -> id
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_78(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> const
+handle_terminal_78(L1,L2,L3,i,t,n/L1,L2,L3) *** OPERAND -> const
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_79(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> length
+handle_terminal_79(L1,L2,L3,i,t,n/L1,L2,L3) *** OPERAND -> length
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_80(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> capacity
+handle_terminal_80(L1,L2,L3,i,t,n/L1,L2,L3) *** OPERAND -> capacity
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_81(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> random
+handle_terminal_81(L1,L2,L3,i,t,n/L1,L2,L3) *** OPERAND -> random
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_82(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> singleconst
+handle_terminal_82(L1,L2,L3,i,t,n/L1,L2,L3) *** OPERAND -> singleconst
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_83(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** OPERAND -> time
+handle_terminal_83(L1,L2,L3,i,t,n/L1,L2,L3) *** OPERAND -> time
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_84(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> id
+handle_terminal_84(L1,L2,L3,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> id
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_85(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> complex INDEX
+handle_terminal_85(L1,L2,L3,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> complex INDEX
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_86(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> length
+handle_terminal_86(L1,L2,L3,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> length
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_87(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> random
+handle_terminal_87(L1,L2,L3,i,t,n/L1,L2,L3) *** ASSIGNABLEOPERAND -> random
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_88(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINARGS -> CALLINARG NEXTCALLINARG
+handle_terminal_88(L1,L2,L3,i,t,n/L1,L2,L3) *** CALLINARGS -> CALLINARG NEXTCALLINARG
 **
-handle_terminal_89(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINARGS -> ε
+handle_terminal_89(L1,L2,L3,i,t,n/L1,L2,L3) *** CALLINARGS -> ε
 **
-handle_terminal_90(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTCALLINARG -> , CALLINARG NEXTCALLINARG
+handle_terminal_90(L1,L2,L3,i,t,n/L1,L2,L3) *** NEXTCALLINARG -> , CALLINARG NEXTCALLINARG
 **
-handle_terminal_91(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTCALLINARG -> ε
+handle_terminal_91(L1,L2,L3,i,t,n/L1,L2,L3) *** NEXTCALLINARG -> ε
 **
-handle_terminal_92(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINARG -> id
+handle_terminal_92(L1,L2,L3,i,t,n/L1,L2,L3) *** CALLINARG -> id
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_93(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINARG -> const
+handle_terminal_93(L1,L2,L3,i,t,n/L1,L2,L3) *** CALLINARG -> const
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_94(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINARG -> complex CALLINDEX
+handle_terminal_94(L1,L2,L3,i,t,n/L1,L2,L3) *** CALLINARG -> complex CALLINDEX
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_95(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARGS -> CALLOUTARG NEXTCALLOUTARG
+handle_terminal_95(L1,L2,L3,i,t,n/L1,L2,L3) *** CALLOUTARGS -> CALLOUTARG NEXTCALLOUTARG
 **
-handle_terminal_96(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARGS -> ε
+handle_terminal_96(L1,L2,L3,i,t,n/L1,L2,L3) *** CALLOUTARGS -> ε
 **
-handle_terminal_97(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTCALLOUTARG -> , CALLOUTARG NEXTCALLOUTARG
+handle_terminal_97(L1,L2,L3,i,t,n/L1,L2,L3) *** NEXTCALLOUTARG -> , CALLOUTARG NEXTCALLOUTARG
 **
-handle_terminal_98(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTCALLOUTARG -> ε
+handle_terminal_98(L1,L2,L3,i,t,n/L1,L2,L3) *** NEXTCALLOUTARG -> ε
 **
-handle_terminal_99(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARG -> id
+handle_terminal_99(L1,L2,L3,i,t,n/L1,L2,L3) *** CALLOUTARG -> id
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_100(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARG -> complex CALLINDEX
+handle_terminal_100(L1,L2,L3,i,t,n/L1,L2,L3) *** CALLOUTARG -> complex CALLINDEX
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_101(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINDEX -> . const
+handle_terminal_101(L1,L2,L3,i,t,n/L1,L2,L3) *** CALLINDEX -> . const
     ↑(t≠1)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_102(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINDEX -> id
+handle_terminal_102(L1,L2,L3,i,t,n/L1,L2,L3) *** CALLINDEX -> id
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_103(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINDEX -> ε
+handle_terminal_103(L1,L2,L3,i,t,n/L1,L2,L3) *** CALLINDEX -> ε
 **
-handle_terminal_104(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOPERAND -> OPERAND
+handle_terminal_104(L1,L2,L3,i,t,n/L1,L2,L3) *** ARITHMETICOPERAND -> OPERAND
 **
-handle_terminal_105(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOPERAND -> complex INDEX
+handle_terminal_105(L1,L2,L3,i,t,n/L1,L2,L3) *** ARITHMETICOPERAND -> complex INDEX
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_106(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** LEFTCONDITIONOPERAND -> OPERAND
+handle_terminal_106(L1,L2,L3,i,t,n/L1,L2,L3) *** LEFTCONDITIONOPERAND -> OPERAND
 **
-handle_terminal_107(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** LEFTCONDITIONOPERAND -> complex INDEX
+handle_terminal_107(L1,L2,L3,i,t,n/L1,L2,L3) *** LEFTCONDITIONOPERAND -> complex INDEX
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
 **
-handle_terminal_108(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** RIGHTCONDITIONOPERAND -> OPERAND
+handle_terminal_108(L1,L2,L3,i,t,n/L1,L2,L3) *** RIGHTCONDITIONOPERAND -> OPERAND
 **
-handle_terminal_109(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** RIGHTCONDITIONOPERAND -> complex INDEX
+handle_terminal_109(L1,L2,L3,i,t,n/L1,L2,L3) *** RIGHTCONDITIONOPERAND -> complex INDEX
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)

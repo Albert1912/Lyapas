@@ -60,7 +60,7 @@ head(/)
     *left_output(L60,L61,0/)
 
     @+F62(10000)
-    *produce_byte_code(L60,L61,F3,L4/F62,r) r↪5
+    *produce_byte_code(L60,L61,F3,L4,F62/F62,r) r↪5
 
     *fwrite(F62/)
     OQ5 @'Success'>F5 *write_line(F5/) →6
@@ -79,7 +79,7 @@ head(/)
 
 #lex(F1/F2,L3)
 #llparse(F3,L4,L5,L6,L7,L8/L20,L21,r)
-#produce_byte_code(L1,L2,F3,L4/F5,r)
+#produce_byte_code(L1,L2,F3,L4,F5/F5,r)
 
 #get_token_id(L1,i/d)
 #get_token(F1,L2,i/F3)
