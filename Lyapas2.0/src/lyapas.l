@@ -62,7 +62,7 @@ head(/)
     @+F62(10000)
     *produce_byte_code(L60,L61,F3,L4/F62,r) r↪5
 
-    *fwrite_line(F62/)
+    *fwrite(F62/)
     OQ5 @'Success'>F5 *write_line(F5/) →6
 §5
     OQ5 @'Fatal'>F5 *write_line(F5/)
@@ -73,7 +73,7 @@ head(/)
 #write_line(F1/)
 #writev(a/)
 #writev_line(a/)
-#fwrite_line(F1/)
+#fwrite(F1/)
 
 #read_all_text(F1/F2)
 
