@@ -500,6 +500,7 @@ handle_rule_35(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> JUMPOP const
     *add_node(L1,L2,x,9,0/L1,L2,j)
 **
 handle_rule_36(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> cmp ( LEFTCONDITIONOPERAND CONDITIONOP RIGHTCONDITIONOPERAND ) const
+    *add_node(L1,L2,n,33,0/L1,L2,j)
 **
 handle_rule_37(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> par const
     *add_node(L1,L2,n,34,0/L1,L2,x)
@@ -632,22 +633,22 @@ handle_rule_70(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOP -> l
     n⇒j
 **
 handle_rule_71(L1,L2,L3,n/L1,L2,L3,j) *** CONDITIONOP -> e
-    n⇒j
+    *add_node(L1,L2,n,44,0/L1,L2,j)
 **
 handle_rule_72(L1,L2,L3,n/L1,L2,L3,j) *** CONDITIONOP -> ne
-    n⇒j
+    *add_node(L1,L2,n,45,0/L1,L2,j)
 **
 handle_rule_73(L1,L2,L3,n/L1,L2,L3,j) *** CONDITIONOP -> g
-    n⇒j
+    *add_node(L1,L2,n,46,0/L1,L2,j)
 **
 handle_rule_74(L1,L2,L3,n/L1,L2,L3,j) *** CONDITIONOP -> ge
-    n⇒j
+    *add_node(L1,L2,n,47,0/L1,L2,j)
 **
 handle_rule_75(L1,L2,L3,n/L1,L2,L3,j) *** CONDITIONOP -> l
-    n⇒j
+    *add_node(L1,L2,n,48,0/L1,L2,j)
 **
 handle_rule_76(L1,L2,L3,n/L1,L2,L3,j) *** CONDITIONOP -> le
-    n⇒j
+    *add_node(L1,L2,n,49,0/L1,L2,j)
 **
 handle_rule_77(L1,L2,L3,n/L1,L2,L3,j) *** OPERAND -> id
     *add_node(L1,L2,n,6,0/L1,L2,j)
@@ -737,12 +738,16 @@ handle_rule_105(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOPERAND -> complex INDEX
     *add_node(L1,L2,n,8,0/L1,L2,j)
 **
 handle_rule_106(L1,L2,L3,n/L1,L2,L3,j) *** LEFTCONDITIONOPERAND -> OPERAND
+    n⇒j
 **
 handle_rule_107(L1,L2,L3,n/L1,L2,L3,j) *** LEFTCONDITIONOPERAND -> complex INDEX
+    *add_node(L1,L2,n,8,0/L1,L2,j)
 **
 handle_rule_108(L1,L2,L3,n/L1,L2,L3,j) *** RIGHTCONDITIONOPERAND -> OPERAND
+    n⇒j
 **
 handle_rule_109(L1,L2,L3,n/L1,L2,L3,j) *** RIGHTCONDITIONOPERAND -> complex INDEX
+    *add_node(L1,L2,n,8,0/L1,L2,j)
 **
 handle_terminal_0(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SUBPROGRAM -> HEAD BODY RET SUBPROGRAM
 **
@@ -849,6 +854,9 @@ handle_terminal_35(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> JUMPOP const
 §1
 **
 handle_terminal_36(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> cmp ( LEFTCONDITIONOPERAND CONDITIONOP RIGHTCONDITIONOPERAND ) const
+    ↑(t≠6)1
+    *add_node(L1,L2,n,9,i/L1,L2,x)
+§1
 **
 handle_terminal_37(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> par const
     ↑(t≠1)1
@@ -1119,8 +1127,16 @@ handle_terminal_105(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** ARITHMETICOPERAND -> comp
 handle_terminal_106(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** LEFTCONDITIONOPERAND -> OPERAND
 **
 handle_terminal_107(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** LEFTCONDITIONOPERAND -> complex INDEX
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_108(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** RIGHTCONDITIONOPERAND -> OPERAND
 **
 handle_terminal_109(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** RIGHTCONDITIONOPERAND -> complex INDEX
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
