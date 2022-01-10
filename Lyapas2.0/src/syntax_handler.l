@@ -720,8 +720,8 @@ handle_rule_96(L1,L2,L3,n/L1,L2,L3,j) *** CALLOUTARGS -> ε
 handle_rule_97(L1,L2,L3,n/L1,L2,L3,j) *** NEXTCALLOUTARG -> , CALLOUTARG NEXTCALLOUTARG
     n⇒j
 **
-    n⇒j
 handle_rule_98(L1,L2,L3,n/L1,L2,L3,j) *** NEXTCALLOUTARG -> ε
+    n⇒j
 **
 handle_rule_99(L1,L2,L3,n/L1,L2,L3,j) *** CALLOUTARG -> id
     *add_node(L1,L2,n,6,0/L1,L2,j)
