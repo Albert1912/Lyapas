@@ -17,6 +17,7 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r)
 *** r - result (0 - fail, >0 - ok)
 ********************************************************************
 ~subprogram_node_visitor(L1,L2,F3,L4,F5,n/F5,r)
+    *append_byte_code_2(F5,17,n/F5)
     *get_child_node_index(L1,L2,n,3/i)
     *body_node_visitor(L1,L2,F3,L4,F5,i/F5,r) r↪1
 
@@ -170,6 +171,13 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r)
 ~console_node_visitor(L1,L2,F3,L4,F5,n/F5,r) 1⇒r
 **
 ********************************************************************
+~split_variable(x/a,b,c,d)
+    x&ffh⇒a
+    x>8&ffh⇒b
+    x>16&ffh⇒c
+    x>24&ffh⇒d
+**
+********************************************************************
 *** write byte code
 *** F1 - byte code
 *** a-h - byte code for append
@@ -178,7 +186,7 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r)
     a@>F1
 **
 ~append_byte_code_2(F1,a,b/F1)
-    a@>F1 b@>F1 c@>F1
+    a@>F1 b@>F1
 **
 ~append_byte_code_3(F1,a,b,c/F1)
     a@>F1 b@>F1 c@>F1
@@ -202,6 +210,10 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r)
 #get_node_info(L1,L2,n/i,v)
 #get_node_child_count(L1,L2,n/c)
 #get_child_node_index(L1,L2,p,j/i)
+
+#s2n(F1/a)
+
+#get_token(F1,L2,i/F3)
 
 #write(F1/)
 #write_line(F1/)
