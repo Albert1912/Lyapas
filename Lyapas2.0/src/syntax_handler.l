@@ -728,12 +728,12 @@ handle_rule_100(L1,L2,L3,n/L1,L2,L3,j) *** CALLOUTARG -> complex CALLINDEX
 handle_rule_101(L1,L2,L3,n/L1,L2,L3,j) *** CALLINDEX -> . const
     *get_node_info(L1,L2,n/i,v)
     *update_node_info(L1,L2,n,8,v/)
-    *add_node(L1,L2,n,0,0/L1,L2,j)
+    *add_node(L1,L2,n,9,0/L1,L2,j)
 **
 handle_rule_102(L1,L2,L3,n/L1,L2,L3,j) *** CALLINDEX -> id
     *get_node_info(L1,L2,n/i,v)
     *update_node_info(L1,L2,n,8,v/)
-    *add_node(L1,L2,n,0,0/L1,L2,j)
+    *add_node(L1,L2,n,6,0/L1,L2,j)
 **
 handle_rule_103(L1,L2,L3,n/L1,L2,L3,j) *** CALLINDEX -> ε
     *get_node_info(L1,L2,n/i,v)
@@ -1137,8 +1137,8 @@ handle_terminal_99(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARG -> id
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
-handle_terminal_100(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARG -> complex CALLINDEX
 **
+handle_terminal_100(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARG -> complex CALLINDEX
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
