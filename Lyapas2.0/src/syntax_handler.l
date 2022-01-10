@@ -510,7 +510,10 @@ handle_rule_38(L1,L2,L3,n/L1,L2,L3,j) *** EXPR -> at COMPLEXEXPR
     n⇒j
 **
 handle_rule_39(L1,L2,L3,n/L1,L2,L3,j) *** STAREXPR -> name ( CALLINARGS / CALLOUTARGS )
-    n⇒j
+    *add_node(L1,L2,n,50,0/L1,L2,j)
+    *add_node(L1,L2,j,1,0/L1,L2,x)
+    *add_node(L1,L2,j,2,0/L1,L2,x)
+    *add_node(L1,L2,j,3,0/L1,L2,x)
 **
 handle_rule_40(L1,L2,L3,n/L1,L2,L3,j) *** STAREXPR -> OPERAND
     *add_node(L1,L2,n,12,0/L1,L2,j)
@@ -684,7 +687,7 @@ handle_rule_87(L1,L2,L3,n/L1,L2,L3,j) *** ASSIGNABLEOPERAND -> random
     *add_node(L1,L2,n,41,0/L1,L2,j)
 **
 handle_rule_88(L1,L2,L3,n/L1,L2,L3,j) *** CALLINARGS -> CALLINARG NEXTCALLINARGS
-    n⇒j
+    *get_child_node_index(L1,L2,n,1/j)
 **
 handle_rule_89(L1,L2,L3,n/L1,L2,L3,j) *** CALLINARGS -> ε
     n⇒j
@@ -696,16 +699,16 @@ handle_rule_91(L1,L2,L3,n/L1,L2,L3,j) *** NEXTCALLINARGS -> ε
     n⇒j
 **
 handle_rule_92(L1,L2,L3,n/L1,L2,L3,j) *** CALLINARG -> id
-    n⇒j
+    *add_node(L1,L2,n,6,0/L1,L2,j)
 **
 handle_rule_93(L1,L2,L3,n/L1,L2,L3,j) *** CALLINARG -> const
-    n⇒j
+    *add_node(L1,L2,n,9,0/L1,L2,j)
 **
 handle_rule_94(L1,L2,L3,n/L1,L2,L3,j) *** CALLINARG -> complex CALLINDEX
-    n⇒j
+    *add_node(L1,L2,n,0,0/L1,L2,j)
 **
 handle_rule_95(L1,L2,L3,n/L1,L2,L3,j) *** CALLOUTARGS -> CALLOUTARG NEXTCALLOUTARGS
-    n⇒j
+    *get_child_node_index(L1,L2,n,2/j)
 **
 handle_rule_96(L1,L2,L3,n/L1,L2,L3,j) *** CALLOUTARGS -> ε
     n⇒j
@@ -717,18 +720,24 @@ handle_rule_98(L1,L2,L3,n/L1,L2,L3,j) *** NEXTCALLOUTARGS -> ε
     n⇒j
 **
 handle_rule_99(L1,L2,L3,n/L1,L2,L3,j) *** CALLOUTARG -> id
-    n⇒j
+    *add_node(L1,L2,n,6,0/L1,L2,j)
 **
 handle_rule_100(L1,L2,L3,n/L1,L2,L3,j) *** CALLOUTARG -> complex
-    n⇒j
+    *add_node(L1,L2,n,0,0/L1,L2,j)
 **
 handle_rule_101(L1,L2,L3,n/L1,L2,L3,j) *** CALLINDEX -> . const
-    n⇒j
+    *get_node_info(L1,L2,n/i,v)
+    *update_node_info(L1,L2,n,8,v/)
+    *add_node(L1,L2,n,0,0/L1,L2,j)
 **
 handle_rule_102(L1,L2,L3,n/L1,L2,L3,j) *** CALLINDEX -> id
-    n⇒j
+    *get_node_info(L1,L2,n/i,v)
+    *update_node_info(L1,L2,n,8,v/)
+    *add_node(L1,L2,n,0,0/L1,L2,j)
 **
 handle_rule_103(L1,L2,L3,n/L1,L2,L3,j) *** CALLINDEX -> ε
+    *get_node_info(L1,L2,n/i,v)
+    *update_node_info(L1,L2,n,7,v/)
     n⇒j
 **
 handle_rule_104(L1,L2,L3,n/L1,L2,L3,j) *** ARITHMETICOPERAND -> OPERAND
@@ -867,6 +876,11 @@ handle_terminal_37(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> par const
 handle_terminal_38(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** EXPR -> at COMPLEXEXPR
 **
 handle_terminal_39(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** STAREXPR -> name ( CALLINARGS / CALLOUTARGS )
+    ↑(t≠0)1
+    *get_child_node_index(L1,L2,n,0/c)
+    *get_node_info(L1,L2,c/j,v)
+    *update_node_info(L1,L2,c,j,i/)
+§1
 **
 handle_terminal_40(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** STAREXPR -> OPERAND
 **
@@ -1093,10 +1107,22 @@ handle_terminal_90(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTCALLINARGS -> , CALLIN
 handle_terminal_91(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTCALLINARGS -> ε
 **
 handle_terminal_92(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINARG -> id
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_93(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINARG -> const
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_94(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINARG -> complex CALLINDEX
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_95(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARGS -> CALLOUTARG NEXTCALLOUTARGS
 **
@@ -1107,12 +1133,28 @@ handle_terminal_97(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTCALLOUTARGS -> , CALLO
 handle_terminal_98(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** NEXTCALLOUTARGS -> ε
 **
 handle_terminal_99(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARG -> id
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_100(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARG -> complex
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_101(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINDEX -> . const
+    ↑(t≠1)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_102(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINDEX -> id
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_103(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINDEX -> ε
 **
