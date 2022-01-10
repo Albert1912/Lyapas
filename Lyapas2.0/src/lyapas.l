@@ -57,6 +57,12 @@ head(/)
     @+L60(10000) @+L61(10000) *** AST
     *init_tree(L60,L61/L60,L61)
     *llparse(F3,L4,L50,L51,L52,L53/L60,L61,r) r↪5
+    *left_output(L60,L61,0/)
+
+    @+F62(10000)
+    *produce_byte_code(L60,L61/F62,r) r↪5
+
+    *fwrite_line(F62/)
     OQ5 @'Success'>F5 *write_line(F5/) →6
 §5
     OQ5 @'Fatal'>F5 *write_line(F5/)
@@ -67,11 +73,13 @@ head(/)
 #write_line(F1/)
 #writev(a/)
 #writev_line(a/)
+#fwrite_line(F1/)
 
 #read_all_text(F1/F2)
 
 #lex(F1/F2,L3)
 #llparse(F3,L4,L5,L6,L7,L8/L20,L21,r)
+#produce_byte_code(L1,L2/F3,r)
 
 #get_token_id(L1,i/d)
 #get_token(F1,L2,i/F3)
@@ -81,3 +89,5 @@ head(/)
 
 #get_table(/L1)
 #get_rules(/L1,L2)
+
+#left_output(L1,L2,n/)
