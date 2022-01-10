@@ -21,9 +21,9 @@ produce_byte_code(L1,L2,F3,L4/F5,r)
     *body_node_visitor(L1,L2,F3,L4,i/F5,r) r↪1
 
     *get_node_child_count(L1,L2,n/c)
-    ↑(c≠5)1
+    ↑(c≠6)1
 
-    *get_child_node_index(L1,L2,p,4/i)
+    *get_child_node_index(L1,L2,n,5/i)
     *subprogram_node_visitor(L1,L2,F3,L4,i/F5,r)
 §1
 **
@@ -42,3 +42,8 @@ produce_byte_code(L1,L2,F3,L4/F5,r)
 #get_node_info(L1,L2,n/i,v)
 #get_node_child_count(L1,L2,n/c)
 #get_child_node_index(L1,L2,p,j/i)
+
+#write(F1/)
+#write_line(F1/)
+#writev(a/)
+#writev_line(a/)
