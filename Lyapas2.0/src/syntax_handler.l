@@ -527,13 +527,17 @@ handle_rule_42(L1,L2,L3,n/L1,L2,L3,j) *** SLASHEXPR -> complex COMPLEXSLASHEXPR
     *add_node(L1,L2,x,0,0/L1,L2,j)
 **
 handle_rule_43(L1,L2,L3,n/L1,L2,L3,j) *** SLASHEXPR -> string CONSOLEACTION console
-    n⇒j
+    *add_node(L1,L2,n,51,0/L1,L2,j)
+    *add_node(L1,L2,j,38,0/L1,L2,x)
 **
 handle_rule_44(L1,L2,L3,n/L1,L2,L3,j) *** SLASHEXPR -> OPERAND
     *add_node(L1,L2,n,13,0/L1,L2,j)
 **
 handle_rule_45(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXSLASHEXPR -> CONSOLEACTION console
-    n⇒j
+    *get_node_info(L1,L2,n/x,v)
+    *update_node_info(L1,L2,n,7,v/)
+    *get_parent_node_index(L1,L2,n/j)
+    *update_node_info(L1,L2,j,50,0/)
 **
 handle_rule_46(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXSLASHEXPR -> INDEX
     *get_node_info(L1,L2,n/x,v)
@@ -580,10 +584,10 @@ handle_rule_55(L1,L2,L3,n/L1,L2,L3,j) *** SWAPSECOND -> const
     *get_child_node_index(L1,L2,n,2/j)
 **
 handle_rule_56(L1,L2,L3,n/L1,L2,L3,j) *** CONSOLEACTION -> l
-    n⇒j
+    *add_node(L1,L2,n,51,0/L1,L2,j)
 **
 handle_rule_57(L1,L2,L3,n/L1,L2,L3,j) *** CONSOLEACTION -> g
-    n⇒j
+    *add_node(L1,L2,n,52,0/L1,L2,j)
 **
 handle_rule_58(L1,L2,L3,n/L1,L2,L3,j) *** JUMPOP -> jz
     *get_parent_node_index(L1,L2,n/j)
@@ -897,6 +901,11 @@ handle_terminal_42(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SLASHEXPR -> complex COMPL
 §1
 **
 handle_terminal_43(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SLASHEXPR -> string CONSOLEACTION console
+    ↑(t≠0)1
+    *get_child_node_index(L1,L2,n,0/c)
+    *get_node_info(L1,L2,c/j,v)
+    *update_node_info(L1,L2,c,j,i/)
+§1
 **
 handle_terminal_44(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SLASHEXPR -> OPERAND
 **
@@ -971,8 +980,16 @@ handle_terminal_55(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** SWAPSECOND -> const
 §1
 **
 handle_terminal_56(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONSOLEACTION -> l
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_57(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CONSOLEACTION -> g
+    ↑(t≠0)1
+    *get_node_info(L1,L2,n/j,v)
+    *update_node_info(L1,L2,n,j,i/)
+§1
 **
 handle_terminal_58(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** JUMPOP -> jz
     ↑(t≠0)1

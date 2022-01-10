@@ -99,6 +99,7 @@ maximize          ⁻               39 +
 random            X              40 +
 time              T              41 +
 string            '[a-zA-Z0-9]+' 42 +
+console           C              43 +
 swap              ⇔              44 +
 lowerone          !              45 +
 singleconst       I[0-63]        48 +
