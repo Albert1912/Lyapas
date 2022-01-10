@@ -686,17 +686,17 @@ handle_rule_86(L1,L2,L3,n/L1,L2,L3,j) *** ASSIGNABLEOPERAND -> length
 handle_rule_87(L1,L2,L3,n/L1,L2,L3,j) *** ASSIGNABLEOPERAND -> random
     *add_node(L1,L2,n,41,0/L1,L2,j)
 **
-    *get_child_node_index(L1,L2,n,1/j)
 handle_rule_88(L1,L2,L3,n/L1,L2,L3,j) *** CALLINARGS -> CALLINARG NEXTCALLINARG
+    *get_child_node_index(L1,L2,n,1/j)
 **
 handle_rule_89(L1,L2,L3,n/L1,L2,L3,j) *** CALLINARGS -> ε
     n⇒j
 **
-    n⇒j
 handle_rule_90(L1,L2,L3,n/L1,L2,L3,j) *** NEXTCALLINARG -> , CALLINARG NEXTCALLINARG
-**
     n⇒j
+**
 handle_rule_91(L1,L2,L3,n/L1,L2,L3,j) *** NEXTCALLINARG -> ε
+    n⇒j
 **
 handle_rule_92(L1,L2,L3,n/L1,L2,L3,j) *** CALLINARG -> id
     *add_node(L1,L2,n,6,0/L1,L2,j)
@@ -707,14 +707,14 @@ handle_rule_93(L1,L2,L3,n/L1,L2,L3,j) *** CALLINARG -> const
 handle_rule_94(L1,L2,L3,n/L1,L2,L3,j) *** CALLINARG -> complex CALLINDEX
     *add_node(L1,L2,n,0,0/L1,L2,j)
 **
-    *get_child_node_index(L1,L2,n,2/j)
 handle_rule_95(L1,L2,L3,n/L1,L2,L3,j) *** CALLOUTARGS -> CALLOUTARG NEXTCALLOUTARG
+    *get_child_node_index(L1,L2,n,2/j)
 **
 handle_rule_96(L1,L2,L3,n/L1,L2,L3,j) *** CALLOUTARGS -> ε
     n⇒j
 **
-    n⇒j
 handle_rule_97(L1,L2,L3,n/L1,L2,L3,j) *** NEXTCALLOUTARG -> , CALLOUTARG NEXTCALLOUTARG
+    n⇒j
 **
     n⇒j
 handle_rule_98(L1,L2,L3,n/L1,L2,L3,j) *** NEXTCALLOUTARG -> ε
@@ -722,8 +722,8 @@ handle_rule_98(L1,L2,L3,n/L1,L2,L3,j) *** NEXTCALLOUTARG -> ε
 handle_rule_99(L1,L2,L3,n/L1,L2,L3,j) *** CALLOUTARG -> id
     *add_node(L1,L2,n,6,0/L1,L2,j)
 **
-    *add_node(L1,L2,n,0,0/L1,L2,j)
 handle_rule_100(L1,L2,L3,n/L1,L2,L3,j) *** CALLOUTARG -> complex CALLINDEX
+    *add_node(L1,L2,n,0,0/L1,L2,j)
 **
 handle_rule_101(L1,L2,L3,n/L1,L2,L3,j) *** CALLINDEX -> . const
     *get_node_info(L1,L2,n/i,v)
@@ -1137,12 +1137,12 @@ handle_terminal_99(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARG -> id
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
+handle_terminal_100(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARG -> complex CALLINDEX
 **
     ↑(t≠0)1
     *get_node_info(L1,L2,n/j,v)
     *update_node_info(L1,L2,n,j,i/)
 §1
-handle_terminal_100(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLOUTARG -> complex CALLINDEX
 **
 handle_terminal_101(L1,L2,L3,F4,L5,i,t,n/L1,L2,L3) *** CALLINDEX -> . const
     ↑(t≠1)1
