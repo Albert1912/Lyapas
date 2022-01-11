@@ -45,7 +45,7 @@ add_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
 §4
 **
 ********************************************************************
-add_first_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
+~add_first_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
     @+L20(10) 10⇒Q20
     0⇒L20.0 Q7-1⇒L20.1 *** subprogram name
     0⇒L20.2 0⇒L20.3 *** input args
@@ -58,7 +58,7 @@ add_first_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
     Oi 1⇒r
 **
 ********************************************************************
-append_string(F1,F2,s/)
+~append_string(F1,F2,s/)
     Oi s⇒x
 §1
     F2i⇒F1x ∆i ∆x i⊕Q2↦1
