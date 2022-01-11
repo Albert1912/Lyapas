@@ -1,6 +1,6 @@
 
-lyapas: src/lyapas.l files stack common lex arrays fixed_size_array syntax_table llparser rules table syntax_handler syntax_handler_utils tree tree_extensions byte_code_producer context_utilities
-	./ltc src/lyapas.l -o build/lyapas obj/files.o obj/stack.o obj/common.o obj/lex.o obj/arrays.o obj/fixed_size_array.o obj/syntax_table.o obj/llparser.o obj/get_rules.o obj/get_table.o obj/syntax_handler.o obj/syntax_handler_utils.o obj/tree.o obj/tree_extensions.o obj/byte_code_producer.o obj/context_utilities.o
+lyapas: src/lyapas.l files stack common lex arrays fixed_size_array syntax_table llparser rules table syntax_handler tree tree_extensions byte_code_producer context_utilities
+	./ltc src/lyapas.l -o build/lyapas obj/files.o obj/stack.o obj/common.o obj/lex.o obj/arrays.o obj/fixed_size_array.o obj/syntax_table.o obj/llparser.o obj/get_rules.o obj/get_table.o obj/syntax_handler.o obj/tree.o obj/tree_extensions.o obj/byte_code_producer.o obj/context_utilities.o
 
 llparser: src/llparser.l
 	./ltc -c src/llparser.l -o obj/llparser
@@ -15,7 +15,7 @@ tree: src/tree.l
 	./ltc -c src/tree.l -o obj/tree
 
 context_utilities: src/context_utilities.l
-	./ltc -c src/context_utilities -o obj/context_utilities
+	./ltc -c src/context_utilities.l -o obj/context_utilities
 
 byte_code_producer: src/byte_code_producer.l
 	./ltc -c src/byte_code_producer.l -o obj/byte_code_producer
@@ -31,9 +31,6 @@ syntax_table: src/syntax_table.l
 
 syntax_handler: src/syntax_handler.l
 	./ltc -c src/syntax_handler.l -o obj/syntax_handler
-
-syntax_handler_utils: src/syntax_handler_utils.l
-	./ltc -c src/syntax_handler_utils.l -o obj/syntax_handler_utils
 
 rules: src/get_rules.l
 	./ltc -c src/get_rules.l -o obj/get_rules
