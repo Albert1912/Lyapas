@@ -1,0 +1,105 @@
+﻿********************************************************************
+*** init context
+********************************************************************
+init_context(L1,F2,L3,L4,F5,L6,L7,F8/)
+    *init_fixed_size(10/L1)
+    *init_fixed_size(2/L3)
+    *init_fixed_size(2/L4)
+    *init_fixed_size(3/L6)
+    *init_fixed_size(2/L7)
+**
+********************************************************************
+*** add subprogram
+*** L1,F2,L3,L4,F5,L6 - context
+*** F7 - subprogram name
+*** i - index added subprogram
+*** r - result (1 - added, 0 - subprogram already exists)
+********************************************************************
+add_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
+    Oj
+    *get_size_fixed_size(L1/x) x↦1
+    *add_first_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r) →4
+
+§1 *** check if subprogram already declared
+    *get_subprogram_start_end(L1,j/s,e)
+    e-s⇒l *compare_strings(F2,F7,s,l/t)
+    t↦3 ∆j j⊕x ↦1
+§2
+    @+L20(10) 10⇒Q20
+    *get_field_fixed_size(L1,n,1/e,t) ∆e
+    e⇒L20.0 e+Q7-1⇒L20.1 *** subprogram name
+    *get_size_fixed_size(L3/e) ∆e
+    e⇒L20.2 e⇒L20.3 *** input args
+    *get_size_fixed_size(L4/e) ∆e
+    e⇒L20.4 e⇒L20.5 *** output args
+    x-1⇒v *get_field_fixed_size(L1,v,7/e,t)
+    e⇒L20.6 e⇒L20.7 *** variables
+    *get_size_fixed_size(L6/e) ∆e
+    0⇒L20.8 0⇒L20.9 *** complexes
+
+    *add_fixed_size(L1,L20/t)
+    x⇒i ∆r →4
+§3
+    Or
+§4
+**
+********************************************************************
+add_first_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
+    @+L20(10) 10⇒Q20
+    0⇒L20.0 Q7-1⇒L20.1 *** subprogram name
+    0⇒L20.2 0⇒L20.3 *** input args
+    0⇒L20.4 0⇒L20.5 *** output args
+    0⇒L20.6 0⇒L20.7 *** variables
+    0⇒L20.8 0⇒L20.9 *** complexes
+
+    *add_fixed_size(L1,L20/x)
+    Oi 1⇒r
+**
+********************************************************************
+*** returns subprogram start and end name pointers
+*** L1 - context(metadata)
+*** i - subprogram index
+*** s - start pointer
+*** e - end pointer
+********************************************************************
+~get_subprogram_start_end(L1,i/s,e)
+    *get_field_fixed_size(L1,i,0/s,r)
+    *get_field_fixed_size(L1,i,1/e,r)
+**
+********************************************************************
+*** compare strings
+*** F1 - first string
+*** F2 - second string
+*** s - start first string
+*** l - length
+*** r - result (0 - not equals, 1 - equals)
+********************************************************************
+~compare_strings(F1,F2,s,l/r)
+    Or l⊕Q2↦3 Oj s⇒x
+§1
+    ↑(j=l)2
+    F1x⊕F2j↦3 ∆x ∆j →1
+§2
+   ∆r
+§3
+**
+********************************************************************
+*** trim
+********************************************************************
+~trim(a/b)
+    a⇒b
+    ↑(b=0)2
+§1
+    ∇b
+§2
+**
+********************************************************************
+#init_fixed_size(n/L1)
+#add_fixed_size(L1,L2/r)
+#remove_fixed_size(L1,i/r)
+#get_fixed_size(L1,i/L2,r)
+#get_field_fixed_size(L1,i,j/f,r)
+#update_fixed_size(L1,i,L2/r)
+#update_field_fixed_size(L1,i,j,f/r)
+#clear_fixed_size(L1/)
+#get_size_fixed_size(L1/n)
