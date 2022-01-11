@@ -22,11 +22,12 @@ add_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
 
 §1 *** check if subprogram already declared
     *get_subprogram_start_end(L1,j/s,e)
-    e-s⇒l *compare_strings(F2,F7,s,l/t)
+    e-s+1⇒l *compare_strings(F2,F7,s,l/t)
     t↦3 ∆j j⊕x ↦1
 §2
-    @+L20(10) 10⇒Q20
-    *get_field_fixed_size(L1,n,1/e,t) ∆e
+    @+L20(10) 10⇒Q20 ∇x
+    *get_field_fixed_size(L1,x,1/e,t) ∆e
+    *append_string(F2,F7,e/)
     e⇒L20.0 e+Q7-1⇒L20.1 *** subprogram name
     *get_size_fixed_size(L3/e) ∆e
     e⇒L20.2 e⇒L20.3 *** input args
@@ -38,7 +39,7 @@ add_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
     0⇒L20.8 0⇒L20.9 *** complexes
 
     *add_fixed_size(L1,L20/t)
-    x⇒i ∆r →4
+    ∆x⇒i ∆r →4
 §3
     Or
 §4
@@ -53,7 +54,14 @@ add_first_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
     0⇒L20.8 0⇒L20.9 *** complexes
 
     *add_fixed_size(L1,L20/x)
+    *append_string(F2,F7,0/)
     Oi 1⇒r
+**
+********************************************************************
+append_string(F1,F2,s/)
+    Oi s⇒x
+§1
+    F2i⇒F1x ∆i ∆x i⊕Q2↦1
 **
 ********************************************************************
 *** returns subprogram start and end name pointers
@@ -103,3 +111,5 @@ add_first_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
 #update_field_fixed_size(L1,i,j,f/r)
 #clear_fixed_size(L1/)
 #get_size_fixed_size(L1/n)
+
+#writev_line(a/)
