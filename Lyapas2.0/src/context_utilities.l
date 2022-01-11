@@ -82,6 +82,23 @@ append_string(F1,F2,s/)
 *** l - length
 *** r - result (0 - not equals, 1 - equals)
 ********************************************************************
+*** get subprogram index by name
+*** L1,F2 - context
+*** F3 - name
+*** i - index
+*** r - result
+********************************************************************
+get_subprogram_index_by_name(L1,F2,F3/i,r)
+    Or *get_size_fixed_size(L1/x) x↪3 Oi
+§1
+    *get_subprogram_start_end(L1,i/s,e)
+    e-s+1⇒l *compare_strings(F2,F3,s,l/t)
+    t↦2 ∆i i⊕x ↦1 ↪3
+§2
+    ∆r
+§3
+**
+********************************************************************
 ~compare_strings(F1,F2,s,l/r)
     Or l⊕Q2↦3 Oj s⇒x
 §1
