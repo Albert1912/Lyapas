@@ -27,31 +27,31 @@ token value
 
 L1 - metadata
 L1(0) - function start
-L1(1) - function length
+L1(1) - function end
 L1(2) - input args start
-L1(3) - input args length
+L1(3) - input args end
 L1(4) - output args start
-L1(5) - output args length
+L1(5) - output args end
 L1(6) - variables start
-L1(7) - variables length
+L1(7) - variables end
 L1(8) - complexes start
-L1(9) - complexes length
-
+L1(9) - complexes end
 F2 - function names
-
 L3 - input args
 L3(2*i) - type (0 - var, 1 - F complex, 2 - L complex)
 L3(2*i+1) - value (var_index or complex index)
-
 L4 - output args
 L4(2*i) - type (0 - var, 1 - F complex, 2 - L complex)
 L4(2*i+1) - value (var_index or complex index)
-
 F5 - variables
 L6 - complexes
 L6(3*i) - type (0 - F complex, 1 - L complex)
 L6(3*i+1) - complex index
 L6(3*i+2) - capacity
+L7 - strings metadata
+L7(0) - start
+L7(1) - end
+F8 - strings
 
 *******************************************************
 ⇒ ¬ % ∨ & ⊕ ∆ ∇ § → ↪ ↦ ↑ ≠ > < ≥ ≤ @ \ #
