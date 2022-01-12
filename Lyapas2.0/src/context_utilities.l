@@ -143,6 +143,57 @@ get_input_arg(L3,i/t,v)
     *get_field_fixed_size(L3,i,1/v,r)
 **
 ********************************************************************
+*** get output args start
+*** L1 - context
+*** i - subprogram index
+*** x - output args start
+********************************************************************
+get_output_args_start(L1,i/s)
+    *get_field_fixed_size(L1,i,4/s,r)
+**
+********************************************************************
+*** get output args end
+*** L1 - context
+*** i - subprogram index
+*** e - output args end
+********************************************************************
+get_output_args_end(L1,i/e)
+    *get_field_fixed_size(L1,i,5/e,r)
+**
+********************************************************************
+*** add output arg
+*** L1,L3 - context (output args)
+*** i - subprogram index
+*** t - arg type
+*** v - value
+*** j - added output arg index
+*** r - result
+********************************************************************
+add_output_arg(L1,L4,i,t,v/j,r)
+    *get_field_fixed_size(L1,i,4/s,r)
+    *get_field_fixed_size(L1,i,5/e,r)
+    *contains(L4,s,e,t,v/r) r↦1
+
+    @+L10(2) 2⇒Q10
+    t⇒L10.0 v⇒L10.1
+    *add_fixed_size(L4,L10/r)
+    ∆e *update_field_fixed_size(L1,i,5,e/r) e⇒j 1⇒r →2
+§1
+    Or
+§2
+**
+********************************************************************
+*** get output arg
+*** L4 - context (output args)
+*** i - arg index
+*** t - type
+*** v - value
+********************************************************************
+get_output_arg(L4,i/t,v)
+    *get_field_fixed_size(L4,i,0/t,r)
+    *get_field_fixed_size(L4,i,1/v,r)
+**
+********************************************************************
 ~contains(L1,s,e,t,v/r)
     @+L10(2) Or
 §1
