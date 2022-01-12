@@ -240,8 +240,66 @@ get_or_add_variable(L1,F5,i,v/j)
 §1
 **
 ********************************************************************
+*** get complexes start
+*** L1 - context
+*** i - subprogram index
+*** s - start
+********************************************************************
+get_complexes_start(L1,i/s)
+    *get_field_fixed_size(L1,i,8/s,r)
+**
+********************************************************************
+*** get complexes length
+*** L1 - context
+*** i - subprogram index
+*** l - length
+********************************************************************
+get_complexes_length(L1,i/l)
+    *get_field_fixed_size(L1,i,9/l,r)
+**
+********************************************************************
+*** add complex
+*** L1,L6 - context (complexes)
+*** i - subprogram index
+*** t - type
+*** d - index
+*** c - capacity
+*** j - added output arg index
+*** r - result
+********************************************************************
+add_complex(L1,L6,i,t,d,c/j,r)
+    *get_field_fixed_size(L1,i,8/s,r)
+    *get_field_fixed_size(L1,i,9/l,r) l↪11 *** complexes empty
+    s+l-1⇒e
+    *contains(L6,s,e,t,d/r) r↦1
+§11
+    @+L10(3) 3⇒Q10
+    t⇒L10.0 d⇒L10.1 c⇒L10.2
+    *add_fixed_size(L6,L10/r)
+    *get_field_fixed_size(L1,i,9/l,r) ∆l
+    *update_field_fixed_size(L1,i,9,l/r)
+    *get_size_fixed_size(L6/j) ∇j
+    1⇒r →2
+§1
+    Or
+§2
+**
+********************************************************************
+*** get output arg
+*** L6 - context (complexes)
+*** i - complex index
+*** t - type
+*** d - index
+*** c - capacity
+********************************************************************
+get_complex(L6,i/t,d,c)
+    *get_field_fixed_size(L6,i,0/t,r)
+    *get_field_fixed_size(L6,i,1/d,r)
+    *get_field_fixed_size(L6,i,2/c,r)
+**
+********************************************************************
 ~contains(L1,s,e,t,v/r)
-    @+L10(2) Or
+    @+L10(3) Or
 §1
     ↑(s>e)4
     *get_fixed_size(L1,s/L10,z)
