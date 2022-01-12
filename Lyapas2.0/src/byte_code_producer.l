@@ -7,6 +7,7 @@
 *** L11,F12,L13,L14,F15,L16,L17,F18 - context
 ********************************************************************
 produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    *init_context(L11,F12,L13,L14,F15,L16,L17,F18/)
     *subprogram_node_visitor(L1,L2,F3,L4,F5,0/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 **
 ********************************************************************
@@ -18,17 +19,28 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 *** r - result (0 - fail, >0 - ok)
 ********************************************************************
 ~subprogram_node_visitor(L1,L2,F3,L4,F5,n/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
-    *append_byte_code_2(F5,17,n/F5)
-    *get_child_node_index(L1,L2,n,3/i)
-    *body_node_visitor(L1,L2,F3,L4,F5,i/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) r↪1
+    @+F90(100)
+    *get_child_node_index(L1,L2,n,0/c)
+    *get_node_info(L1,L2,c/i,v)
+    *get_token(F3,L4,v/F90)
+    *add_subprogram(L11,F12,L13,L14,F15,L16,F90/i,r) r↪1
 
-    *append_byte_code_1(F5,18/F5)
+    *append_byte_code_2(F5,0,i/F5)
+    *get_child_node_index(L1,L2,n,3/i)
+    *body_node_visitor(L1,L2,F3,L4,F5,i/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) r↪2
+
+    *append_byte_code_1(F5,1/F5)
     *get_node_child_count(L1,L2,n/c)
     ↑(c≠6)1
 
     *get_child_node_index(L1,L2,n,5/i)
     *subprogram_node_visitor(L1,L2,F3,L4,F5,i/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    →2
 §1
+    @+F91(100)
+    @'[SYNTAX ERROR] subprogram "'>F91 *write(F91/)  *write(F90/)
+    OQ91 @'" already defined '>F91 *write_line(F91/)
+§2
 **
 ********************************************************************
 *** body node visitor
