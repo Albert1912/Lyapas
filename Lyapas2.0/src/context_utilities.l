@@ -264,7 +264,7 @@ get_complexes_length(L1,i/l)
 *** t - type
 *** d - index
 *** c - capacity
-*** j - added output arg index
+*** j - added complex index
 *** r - result
 ********************************************************************
 add_complex(L1,L6,i,t,d,c/j,r)
@@ -296,6 +296,30 @@ get_complex(L6,i/t,d,c)
     *get_field_fixed_size(L6,i,0/t,r)
     *get_field_fixed_size(L6,i,1/d,r)
     *get_field_fixed_size(L6,i,2/c,r)
+**
+********************************************************************
+*** get complex id by name
+*** L1, L6 - context (complexes)
+*** i - subprogram index
+*** t - type
+*** d - index
+*** j - complex index
+*** r - result
+********************************************************************
+get_complex_id_by_name(L1,L6,i,t,d/j,r)
+    @+L10(3) Or
+    *get_field_fixed_size(L1,i,8/s,z)
+    *get_field_fixed_size(L1,i,9/l,z) l↪4
+    s+l-1⇒e
+§1
+    ↑(s>e)4
+    *get_fixed_size(L6,s/L10,z)
+    L10.0⊕t ↦2 L10.1⊕d ↦2 ↪3
+§2
+    ∆s →1
+§3
+    ∆r s⇒j
+§4
 **
 ********************************************************************
 ~contains(L1,s,e,t,v/r)
