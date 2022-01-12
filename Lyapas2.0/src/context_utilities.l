@@ -322,6 +322,49 @@ get_complex_id_by_name(L1,L6,i,t,d/j,r)
 §4
 **
 ********************************************************************
+*** get or add string
+********************************************************************
+get_or_add_string(L7,F8,F10/j)
+    *get_size_fixed_size(L7/n) Oj n↦1
+    *get_or_add_first_string(L7,F8,F10/j) →3
+§1
+    *get_field_fixed_size(L7,j,0/s,z)
+    *get_field_fixed_size(L7,j,1/l,z)
+    *compare_strings(F8,F10,s,l/r) r↦3
+    ∆j j⊕n ↦1
+§2
+    ∇n
+    *get_field_fixed_size(L7,n,0/s,z)
+    *get_field_fixed_size(L7,n,1/l,z)
+    s+l⇒e
+    *append_string(F8,F10,e/)
+    @+L20(2) 2⇒Q20 e⇒L20.0 Q10⇒L20.1
+    *add_fixed_size(L7,L20/r)
+    *get_size_fixed_size(L7/j) ∇j
+§3
+**
+********************************************************************
+get_or_add_first_string(L7,F8,F10/j)
+    *append_string(F8,F10,0/)
+    @+L20(2) 2⇒Q20
+    0⇒L20.0 Q10⇒L20.1
+
+    *add_fixed_size(L7,L20/r)
+    0⇒j
+**
+********************************************************************
+get_strings_length(L7/l)
+    *get_size_fixed_size(L7/l)
+**
+********************************************************************
+get_string_by_id(L7,F8,i/F10)
+    *get_field_fixed_size(L7,i,0/s,z)
+    *get_field_fixed_size(L7,i,1/l,z)
+    l⇒Q10 Oj
+§1
+    F8s⇒F10j ∆s ∆j j⊕l ↦1
+**
+********************************************************************
 ~contains(L1,s,e,t,v/r)
     @+L10(3) Or
 §1

@@ -50,7 +50,7 @@ L6(3*i+1) - complex index
 L6(3*i+2) - capacity
 L7 - strings metadata
 L7(0) - start
-L7(1) - end
+L7(1) - length
 F8 - strings
 
 *******************************************************
