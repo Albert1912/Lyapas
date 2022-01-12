@@ -4,8 +4,9 @@
 *** F3, L4 - token array
 *** F5 - byte code
 *** r - result (0 - fail, >0 - ok)
+*** L11,F12,L13,L14,F15,L16,L17,F18 - context
 ********************************************************************
-produce_byte_code(L1,L2,F3,L4,F5/F5,r)
+produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
     *subprogram_node_visitor(L1,L2,F3,L4,F5,0/F5,r)
 **
 ********************************************************************
