@@ -116,9 +116,27 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
     →9 *** const
 §3 →9 *** length
 §4 →9 *** capacity
-§5 →9 *** random
-§6 →9 *** singleconst
-§7 →9 *** time
+§5
+    *append_byte_code_2(F5,2,4/F5)
+    →9 *** random
+§6
+    *get_token(F3,L4,v/F90)
+    *append_byte_code_2(F5,2,5/F5)
+    @<F90.0
+    *s2n(F90/x)
+    ↑(x>32)61
+    1<x⇒z *split_variable(z/a,b,c,d)
+    *append_byte_code_4(F5,a,b,c,d/F5)
+    *append_byte_code_4(F5,0,0,0,0/F5) →62
+§61
+    x-32⇒x 1<x⇒z *split_variable(z/a,b,c,d)
+    *append_byte_code_4(F5,0,0,0,0/F5)
+    *append_byte_code_4(F5,a,b,c,d/F5) →62
+§62
+    →9 *** singleconst
+§7
+    *append_byte_code_2(F5,2,6/F5)
+    →9 *** time
 §8 →9 *** complex element
 §9
     1⇒r
