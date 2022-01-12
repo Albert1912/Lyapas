@@ -202,6 +202,44 @@ get_output_arg(L4,i/t,v)
     *get_field_fixed_size(L4,i,1/v,r)
 **
 ********************************************************************
+*** get variables start
+*** L1 - context
+*** i - subprogram index
+*** s - start
+********************************************************************
+get_variables_start(L1,i/s)
+    *get_field_fixed_size(L1,i,6/s,r)
+**
+********************************************************************
+*** get variables length
+*** L1 - context
+*** i - subprogram index
+*** l - length
+********************************************************************
+get_variables_length(L1,i/l)
+    *get_field_fixed_size(L1,i,7/l,r)
+**
+********************************************************************
+*** get or add variable
+*** L1,F5 - context (variables)
+*** i - subprogram index
+*** v - variable
+*** j - variable index
+********************************************************************
+get_or_add_variable(L1,F5,i,v/j)
+    *get_field_fixed_size(L1,i,6/s,r)
+    *get_field_fixed_size(L1,i,7/l,r) l↪12
+    s+l-1⇒e
+    *contains_single(F5,s,e,v/r,j) r↦1
+§11
+    ∆e
+§12
+    v⇒F5e ∆l
+    *update_field_fixed_size(L1,i,7,l/r)
+    e⇒j
+§1
+**
+********************************************************************
 ~contains(L1,s,e,t,v/r)
     @+L10(2) Or
 §1
@@ -212,6 +250,18 @@ get_output_arg(L4,i/t,v)
     ∆s →1
 §3
     ∆r
+§4
+**
+********************************************************************
+~contains_single(F1,s,e,v/r,i)
+    Or
+§1
+    ↑(s>e)4
+    F1s⊕v ↦2 ↪3
+§2
+    ∆s →1
+§3
+    ∆r s⇒i
 §4
 **
 ********************************************************************
