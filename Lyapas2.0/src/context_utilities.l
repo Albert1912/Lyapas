@@ -75,13 +75,6 @@ add_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
     *get_field_fixed_size(L1,i,1/e,r)
 **
 ********************************************************************
-*** compare strings
-*** F1 - first string
-*** F2 - second string
-*** s - start first string
-*** l - length
-*** r - result (0 - not equals, 1 - equals)
-********************************************************************
 *** get subprogram index by name
 *** L1,F2 - context
 *** F3 - name
@@ -98,6 +91,77 @@ get_subprogram_index_by_name(L1,F2,F3/i,r)
     ∆r
 §3
 **
+********************************************************************
+*** get input args start
+*** L1 - context
+*** i - subprogram index
+*** x - input args start
+********************************************************************
+get_input_args_start(L1,i/s)
+    *get_field_fixed_size(L1,i,2/s,r)
+**
+********************************************************************
+*** get input args end
+*** L1 - context
+*** i - subprogram index
+*** e - input args end
+********************************************************************
+get_input_args_end(L1,i/e)
+    *get_field_fixed_size(L1,i,3/e,r)
+**
+********************************************************************
+*** add input arg
+*** L1,L3 - context (input args)
+*** i - subprogram index
+*** t - arg type
+*** v - value
+*** j - added input arg index
+*** r - result
+********************************************************************
+add_input_arg(L1,L3,i,t,v/j,r)
+    *get_field_fixed_size(L1,i,2/s,r)
+    *get_field_fixed_size(L1,i,3/e,r)
+    *contains(L3,s,e,t,v/r) r↦1
+
+    @+L10(2) 2⇒Q10
+    t⇒L10.0 v⇒L10.1
+    *add_fixed_size(L3,L10/r)
+    ∆e *update_field_fixed_size(L1,i,3,e/r) e⇒j 1⇒r →2
+§1
+    Or
+§2
+**
+********************************************************************
+*** get input arg
+*** L3 - context (input args)
+*** i - arg index
+*** t - type
+*** v - value
+********************************************************************
+get_input_arg(L3,i/t,v)
+    *get_field_fixed_size(L3,i,0/t,r)
+    *get_field_fixed_size(L3,i,1/v,r)
+**
+********************************************************************
+~contains(L1,s,e,t,v/r)
+    @+L10(2) Or
+§1
+    ↑(s>e)4
+    *get_fixed_size(L1,s/L10,r)
+    L10.0⊕t ↦2 L10.1⊕v ↦2 ↪3
+§2
+    ∆s →1
+§3
+    ∆r
+§4
+**
+********************************************************************
+*** compare strings
+*** F1 - first string
+*** F2 - second string
+*** s - start first string
+*** l - length
+*** r - result (0 - not equals, 1 - equals)
 ********************************************************************
 ~compare_strings(F1,F2,s,l/r)
     Or l⊕Q2↦3 Oj s⇒x
