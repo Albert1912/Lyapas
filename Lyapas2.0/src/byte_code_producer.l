@@ -107,7 +107,13 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
     *split_variable(j/a,b,c,d)
     *append_byte_code_4(F5,a,b,c,d/F5)
     →9 *** id
-§2 →9 *** const
+§2
+    *get_token(F3,L4,v/F90)
+    *append_byte_code_2(F5,2,1/F5)
+    *s2n(F90/x)
+    *split_variable(x/a,b,c,d)
+    *append_byte_code_4(F5,a,b,c,d/F5)
+    →9 *** const
 §3 →9 *** length
 §4 →9 *** capacity
 §5 →9 *** random
