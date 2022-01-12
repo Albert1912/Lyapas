@@ -29,14 +29,14 @@ add_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
     *get_field_fixed_size(L1,x,1/e,t) ∆e
     *append_string(F2,F7,e/)
     e⇒L20.0 e+Q7-1⇒L20.1 *** subprogram name
-    *get_size_fixed_size(L3/e) ∆e
-    e⇒L20.2 e⇒L20.3 *** input args
-    *get_size_fixed_size(L4/e) ∆e
-    e⇒L20.4 e⇒L20.5 *** output args
-    x-1⇒v *get_field_fixed_size(L1,v,7/e,t)
-    e⇒L20.6 e⇒L20.7 *** variables
-    *get_size_fixed_size(L6/e) ∆e
-    0⇒L20.8 0⇒L20.9 *** complexes
+    *get_size_fixed_size(L3/e)
+    e⇒L20.2 0⇒L20.3 *** input args
+    *get_size_fixed_size(L4/e)
+    e⇒L20.4 0⇒L20.5 *** output args
+    *get_field_fixed_size(L1,x,7/e,t)
+    e⇒L20.6 0⇒L20.7 *** variables
+    *get_size_fixed_size(L6/e)
+    e⇒L20.8 0⇒L20.9 *** complexes
 
     *add_fixed_size(L1,L20/t)
     ∆x⇒i ∆r →4
@@ -101,13 +101,13 @@ get_input_args_start(L1,i/s)
     *get_field_fixed_size(L1,i,2/s,r)
 **
 ********************************************************************
-*** get input args end
+*** get input args length
 *** L1 - context
 *** i - subprogram index
-*** e - input args end
+*** l - input args length
 ********************************************************************
-get_input_args_end(L1,i/e)
-    *get_field_fixed_size(L1,i,3/e,r)
+get_input_args_length(L1,i/l)
+    *get_field_fixed_size(L1,i,3/l,r)
 **
 ********************************************************************
 *** add input arg
@@ -120,13 +120,17 @@ get_input_args_end(L1,i/e)
 ********************************************************************
 add_input_arg(L1,L3,i,t,v/j,r)
     *get_field_fixed_size(L1,i,2/s,r)
-    *get_field_fixed_size(L1,i,3/e,r)
+    *get_field_fixed_size(L1,i,3/l,r) l↪11 *** input args empty
+    s+l-1⇒e
     *contains(L3,s,e,t,v/r) r↦1
-
+§11
     @+L10(2) 2⇒Q10
     t⇒L10.0 v⇒L10.1
     *add_fixed_size(L3,L10/r)
-    ∆e *update_field_fixed_size(L1,i,3,e/r) e⇒j 1⇒r →2
+    *get_field_fixed_size(L1,i,3/l,r) ∆l
+    *update_field_fixed_size(L1,i,3,l/r)
+    *get_size_fixed_size(L3/j) ∇j
+    1⇒r →2
 §1
     Or
 §2
@@ -152,13 +156,13 @@ get_output_args_start(L1,i/s)
     *get_field_fixed_size(L1,i,4/s,r)
 **
 ********************************************************************
-*** get output args end
+*** get output args length
 *** L1 - context
 *** i - subprogram index
-*** e - output args end
+*** l - output args length
 ********************************************************************
-get_output_args_end(L1,i/e)
-    *get_field_fixed_size(L1,i,5/e,r)
+get_output_args_length(L1,i/l)
+    *get_field_fixed_size(L1,i,5/l,r)
 **
 ********************************************************************
 *** add output arg
@@ -171,13 +175,17 @@ get_output_args_end(L1,i/e)
 ********************************************************************
 add_output_arg(L1,L4,i,t,v/j,r)
     *get_field_fixed_size(L1,i,4/s,r)
-    *get_field_fixed_size(L1,i,5/e,r)
+    *get_field_fixed_size(L1,i,5/l,r) l↪11 *** output args empty
+    s+l-1⇒e
     *contains(L4,s,e,t,v/r) r↦1
-
+§11
     @+L10(2) 2⇒Q10
     t⇒L10.0 v⇒L10.1
     *add_fixed_size(L4,L10/r)
-    ∆e *update_field_fixed_size(L1,i,5,e/r) e⇒j 1⇒r →2
+    *get_field_fixed_size(L1,i,5/l,r) ∆l
+    *update_field_fixed_size(L1,i,5,l/r)
+    *get_size_fixed_size(L4/j) ∇j
+    1⇒r →2
 §1
     Or
 §2
@@ -198,7 +206,7 @@ get_output_arg(L4,i/t,v)
     @+L10(2) Or
 §1
     ↑(s>e)4
-    *get_fixed_size(L1,s/L10,r)
+    *get_fixed_size(L1,s/L10,z)
     L10.0⊕t ↦2 L10.1⊕v ↦2 ↪3
 §2
     ∆s →1

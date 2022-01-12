@@ -29,13 +29,13 @@ L1 - metadata
 L1(0) - function start
 L1(1) - function end
 L1(2) - input args start
-L1(3) - input args end
+L1(3) - input args length
 L1(4) - output args start
-L1(5) - output args end
+L1(5) - output args length
 L1(6) - variables start
-L1(7) - variables end
+L1(7) - variables length
 L1(8) - complexes start
-L1(9) - complexes end
+L1(9) - complexes length
 F2 - function names
 L3 - input args
 L3(2*i) - type (0 - var, 1 - F complex, 2 - L complex)
