@@ -171,7 +171,7 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
     @+F90(100)
     *get_child_node_index(L1,L2,n,0/c)
     *get_node_info(L1,L2,c/i,v)
-    i⊕6↪1 i⊕9↪2 i⊕39↪3 i⊕40↪4 i⊕41↪5 i⊕42↪6 i⊕43↪7 i⊕8↪8
+    i⊕6↪1 i⊕9↪2 i⊕39↪3 i⊕40↪4 i⊕41↪5 i⊕42↪6 i⊕43↪7 i⊕8↪8 Or →10
 §1
     *get_token(F3,L4,v/F90)
     *get_or_add_variable(L11,F15,s,F90.0/j)
@@ -232,15 +232,38 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 §7
     *append_byte_code_2(F5,2,6/F5)
     →9 *** time
-§8 →9 *** complex element
+§8
+    *get_token(F3,L4,v/F90)
+    *s2ns(F90,1/d)
+    *get_complex_id_by_name(L11,L16,s,0,d/j,r) r↦81
+    *get_complex_id_by_name(L11,L16,s,1,d/j,r) r↪82
+§81
+    *append_byte_code_2(F5,2,7/F5)
+    *split_variable(j/z,x,y,w)
+    *append_byte_code_4(F5,z,x,y,w/F5)
+    *get_child_node_index(L1,L2,n,0/z)
+    *get_child_node_index(L1,L2,z,0/c)
+    *get_node_info(L1,L2,c/i,v)
+    i⊕6↪811 i⊕9↪812 →10
+§811
+    *get_token(F3,L4,v/F90)
+    *get_or_add_variable(L11,F15,s,F90.0/j)
+    *split_variable(j/a,b,c,d)
+    *append_byte_code_5(F5,0,a,b,c,d/F5)
+    →9 *** id
+§812
+    *get_token(F3,L4,v/F90)
+    *s2n(F90/x)
+    *split_variable(x/a,b,c,d)
+    *append_byte_code_5(F5,1,a,b,c,d/F5)
+    →9 *** const
+§82
+    Or *** error
+    →10 *** complex element
 §9
     1⇒r
 §10
 **
-****get_node_info(L1,L2,n/i,v)
-****get_node_child_count(L1,L2,n/c)
-****get_child_node_index(L1,L2,p,j/i)
-****get_token(F3,L4,v/F90)
 ********************************************************************
 ~sub_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) 1⇒r
 **
