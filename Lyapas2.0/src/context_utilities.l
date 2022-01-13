@@ -310,7 +310,7 @@ get_complex(L6,i/t,d,c,a)
 *** r - result
 ********************************************************************
 get_complex_id_by_name(L1,L6,i,t,d/j,r)
-    @+L10(3) Or
+    @+L10(4) Or
     *get_field_fixed_size(L1,i,8/s,z)
     *get_field_fixed_size(L1,i,9/l,z) l↪4
     s+l-1⇒e

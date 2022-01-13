@@ -1709,7 +1709,29 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 §6
 **
 ********************************************************************
-~zeroing_complex_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) 1⇒r
+~zeroing_complex_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    @+F90(30) @+F92(30)
+    *get_child_node_index(L1,L2,n,0/c)
+    *get_node_info(L1,L2,c/i,v)
+    *get_token(F3,L4,v/F90)
+    F90.0⇒t
+    *s2ns(F90,1/d) t⊕76 ↪31
+    0⇒t →32
+§31
+    1⇒t
+§32
+    *** t - type
+    *** d - index
+
+    *get_complex_id_by_name(L11,L16,s,t,d/j,r) r↪5
+
+    *split_variable(x/a,b,c,d)
+    *append_byte_code_5(F5,27,a,b,c,d/F5) →6
+§5
+    @+F91(100)
+    @'[SYNTAX ERROR] complex '>F91 *write(F91/) *write(F90/)
+    OQ91 @' not declared'>F91 *write_line(F91/) Or →6
+§6
 **
 ********************************************************************
 ~append_string_to_complex_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) 1⇒r
