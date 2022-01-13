@@ -199,7 +199,19 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 §32
     Or *** error
     →10 *** length
-§4 →9 *** capacity
+§4
+    *get_token(F3,L4,v/F90)
+    *s2ns(F90,1/d)
+    *get_complex_id_by_name(L11,L16,s,0,d/j,r) r↦41
+    *get_complex_id_by_name(L11,L16,s,1,d/j,r) r↪42
+§41
+    *append_byte_code_2(F5,2,3/F5)
+    *split_variable(j/z,x,y,w)
+    *append_byte_code_4(F5,z,x,y,w/F5)
+    →9
+§42
+    Or *** error
+    →10 *** capacity
 §5
     *append_byte_code_2(F5,2,4/F5)
     →9 *** random
