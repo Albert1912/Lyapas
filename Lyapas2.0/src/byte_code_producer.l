@@ -26,6 +26,13 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
     *add_subprogram(L11,F12,L13,L14,F15,L16,F90/i,r) r↪1
 
     *append_byte_code_2(F5,0,i/F5) i⇒s
+
+    *get_child_node_index(L1,L2,n,1/i)
+    *input_args_node_visitor(L1,L2,F3,L4,F5,i,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) r↪2
+
+    *get_child_node_index(L1,L2,n,2/i)
+    *output_args_node_visitor(L1,L2,F3,L4,F5,i,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) r↪2
+
     *get_child_node_index(L1,L2,n,3/i)
     *body_node_visitor(L1,L2,F3,L4,F5,i,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) r↪2
 
@@ -41,6 +48,38 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
     @'[SYNTAX ERROR] subprogram "'>F91 *write(F91/)  *write(F90/)
     OQ91 @'" already defined '>F91 *write_line(F91/)
 §2
+**
+********************************************************************
+~input_args_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    @+F90(100)
+    *get_node_child_count(L1,L2,n/c)
+    Ok Or
+§1
+    ↑(k=c)6
+    *get_child_node_index(L1,L2,n,k/j)
+    *get_node_info(L1,L2,j/i,v)
+    i⊕6↪2 i⊕7↪3 →4
+§2
+    *get_token(F3,L4,v/F90)
+    *get_or_add_variable(L11,F15,s,F90.0/j)
+    *add_input_arg(L11,L13,s,0,j/z,r) r↪5
+    →4 *** id
+§3
+
+    →4 *** complex
+§4
+    ∆k →1
+§5
+    @+F91(100)
+    @'[SYNTAX ERROR] input argument "'>F91 *write(F91/)  *write(F90/)
+    OQ91 @'" already defined'>F91 *write_line(F91/) →7
+§6
+    1⇒r
+§7
+**
+********************************************************************
+~output_args_node_visitor(L1,L2,F3,L4,F5,i,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    1⇒r
 **
 ********************************************************************
 *** body node visitor
