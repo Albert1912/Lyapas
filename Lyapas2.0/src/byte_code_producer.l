@@ -1016,7 +1016,34 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 §6
 **
 ********************************************************************
-~swap_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) 1⇒r
+~swap_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    @+F90(100)
+    *get_node_child_count(L1,L2,n/c)
+    *append_byte_code_1(F5,11/F5)
+    c⊕2↪1 c⊕3↪2 Or →4
+§1
+    *append_byte_code_1(F5,0/F5)
+    *get_child_node_index(L1,L2,n,0/x)
+    *get_node_info(L1,L2,x/i,v)
+    *get_token(F3,L4,v/F90)
+    *get_or_add_variable(L11,F15,s,F90.0/j)
+    *split_variable(j/a,b,c,d)
+    *append_byte_code_4(F5,a,b,c,d/F5)
+
+    *get_child_node_index(L1,L2,n,1/x)
+    *get_node_info(L1,L2,x/i,v)
+    *get_token(F3,L4,v/F90)
+    *get_or_add_variable(L11,F15,s,F90.0/j)
+    *split_variable(j/a,b,c,d)
+    *append_byte_code_4(F5,a,b,c,d/F5)
+    →3 *** id id
+§2
+    *append_byte_code_1(F5,1/F5)
+
+    →3 *** complex elements
+§3
+    1⇒r
+§4
 **
 ********************************************************************
 ~zeroing_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
