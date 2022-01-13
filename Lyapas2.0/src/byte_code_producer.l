@@ -1186,13 +1186,40 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 ~dec_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) 1⇒r
 **
 ********************************************************************
-~jz_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) 1⇒r
+~jz_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    @+F90(30)
+    *get_child_node_index(L1,L2,n,0/c)
+    *get_node_info(L1,L2,c/i,v)
+
+    *get_token(F3,L4,v/F90)
+    *s2n(F90/x)
+    *split_variable(x/a,b,c,d)
+    *append_byte_code_5(F5,22,a,b,c,d/F5)
+    1⇒r
 **
 ********************************************************************
-~jnz_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) 1⇒r
+~jnz_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    @+F90(30)
+    *get_child_node_index(L1,L2,n,0/c)
+    *get_node_info(L1,L2,c/i,v)
+
+    *get_token(F3,L4,v/F90)
+    *s2n(F90/x)
+    *split_variable(x/a,b,c,d)
+    *append_byte_code_5(F5,23,a,b,c,d/F5)
+    1⇒r
 **
 ********************************************************************
-~jump_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) 1⇒r
+~jump_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    @+F90(30)
+    *get_child_node_index(L1,L2,n,0/c)
+    *get_node_info(L1,L2,c/i,v)
+
+    *get_token(F3,L4,v/F90)
+    *s2n(F90/x)
+    *split_variable(x/a,b,c,d)
+    *append_byte_code_5(F5,24,a,b,c,d/F5)
+    1⇒r
 **
 ********************************************************************
 ~cmp_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) 1⇒r
