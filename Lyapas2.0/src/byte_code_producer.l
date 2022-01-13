@@ -186,7 +186,19 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
     *split_variable(x/a,b,c,d)
     *append_byte_code_4(F5,a,b,c,d/F5)
     →9 *** const
-§3 →9 *** length
+§3
+    *get_token(F3,L4,v/F90)
+    *s2ns(F90,1/d)
+    *get_complex_id_by_name(L11,L16,s,0,d/j,r) r↦31
+    *get_complex_id_by_name(L11,L16,s,1,d/j,r) r↪32
+§31
+    *append_byte_code_2(F5,2,2/F5)
+    *split_variable(j/z,x,y,w)
+    *append_byte_code_4(F5,z,x,y,w/F5)
+    →9
+§32
+    Or *** error
+    →10 *** length
 §4 →9 *** capacity
 §5
     *append_byte_code_2(F5,2,4/F5)
@@ -211,6 +223,7 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 §8 →9 *** complex element
 §9
     1⇒r
+§10
 **
 ****get_node_info(L1,L2,n/i,v)
 ****get_node_child_count(L1,L2,n/c)
