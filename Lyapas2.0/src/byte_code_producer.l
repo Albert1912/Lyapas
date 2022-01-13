@@ -1877,7 +1877,7 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 **
 ********************************************************************
 ~call_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
-    @+F90(30)
+    @+F90(30) @+F91(100)
     *get_child_node_index(L1,L2,n,0/c)
     *get_node_info(L1,L2,c/i,v)
     *get_token(F3,L4,v/F90)
@@ -1885,12 +1885,160 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
     *get_subprogram_index_by_name(L11,F12,F90/j,r) r↪1
     *split_variable(j/a,b,c,d)
     *append_byte_code_5(F5,29,a,b,c,d/F5)
+
+    *** input args
+    *get_child_node_index(L1,L2,n,1/c)
+    *get_node_child_count(L1,L2,c/x)
+    *get_input_args_length(L11,j/l)
+    x⊕l↦3
+    *append_byte_code_1(F5,x/F5)
+    *get_child_node_index(L1,L2,n,1/f)
+    Op
+§11
+    ↑(p=x)12
+    *build_call_argument_node_visitor(L1,L2,F3,L4,F5,f,s,p/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    r↪2
+    ∆p →11
+§12
+
+    *** output args
+    *get_child_node_index(L1,L2,n,2/c)
+    *get_node_child_count(L1,L2,c/x)
+    *get_output_args_length(L11,j/l)
+    x⊕l↦4
+    *append_byte_code_1(F5,x/F5)
+    *get_child_node_index(L1,L2,n,2/f)
+    Op
+§21
+    ↑(p=x)22
+    *build_call_argument_node_visitor(L1,L2,F3,L4,F5,f,s,p/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    r↪2
+    ∆p →21
+§22
     1⇒r →2
 §1
-    @+F91(100)
-    @'[SYNTAX ERROR] subprogram "'>F91 *write(F91/)  *write(F90/)
-    OQ91 @'" not defined'>F91 *write_line(F91/)
+    OQ91 @'[SYNTAX ERROR] subprogram "'>F91 *write(F91/)  *write(F90/)
+    OQ91 @'" not defined'>F91 *write_line(F91/) Or →2
+§3
+    OQ91 @'[SYNTAX ERROR] Input arguments length mismatch. Required length: '>F91
+    *write(F91/) *writev(l/)
+    OQ91 @'. Passed arguments length: '>F91 *write(F91/) *writev_line(x/) Or →2
+§4
+    OQ91 @'[SYNTAX ERROR] Output arguments length mismatch. Required length: '>F91
+    *write(F91/) *writev(l/)
+    OQ91 @'. Passed arguments length: '>F91 *write(F91/) *writev_line(x/) Or →2
 §2
+**
+********************************************************************
+~build_call_argument_node_visitor(L1,L2,F3,L4,F5,n,s,q/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    @+F90(100)
+    *get_child_node_index(L1,L2,n,q/c)
+    *get_node_info(L1,L2,c/i,v)
+    i⊕6↪1 i⊕9↪2 i⊕39↪3 i⊕40↪4 i⊕41↪5 i⊕42↪6 i⊕43↪7 i⊕8↪8 i⊕7↪100 Or →10
+§1
+    *get_token(F3,L4,v/F90)
+    *get_or_add_variable(L11,F15,s,F90.0/j)
+    *split_variable(j/a,b,c,d)
+    *append_byte_code_5(F5,0,a,b,c,d/F5)
+    →9 *** id
+§2
+    *get_token(F3,L4,v/F90)
+    *s2n(F90/x)
+    *split_variable(x/a,b,c,d)
+    *append_byte_code_5(F5,1,a,b,c,d/F5)
+    →9 *** const
+§3
+    *get_token(F3,L4,v/F90)
+    *s2ns(F90,1/d)
+    *get_complex_id_by_name(L11,L16,s,0,d/j,r) r↦31
+    *get_complex_id_by_name(L11,L16,s,1,d/j,r) r↪32
+§31
+    *split_variable(j/z,x,y,w)
+    *append_byte_code_5(F5,2,z,x,y,w/F5)
+    →9
+§32
+    Or *** error
+    →10 *** length
+§4
+    *get_token(F3,L4,v/F90)
+    *s2ns(F90,1/d)
+    *get_complex_id_by_name(L11,L16,s,0,d/j,r) r↦41
+    *get_complex_id_by_name(L11,L16,s,1,d/j,r) r↪42
+§41
+    *split_variable(j/z,x,y,w)
+    *append_byte_code_5(F5,3,z,x,y,w/F5)
+    →9
+§42
+    Or *** error
+    →10 *** capacity
+§5
+    *append_byte_code_1(F5,4/F5)
+    →9 *** random
+§6
+    *get_token(F3,L4,v/F90)
+    *s2ns(F90,1/x)
+    ↑(x>32)61
+    1<x⇒z *split_variable(z/a,b,c,d)
+    *append_byte_code_5(F5,5,a,b,c,d/F5)
+    *append_byte_code_4(F5,0,0,0,0/F5) →62
+§61
+    x-32⇒x 1<x⇒z *split_variable(z/a,b,c,d)
+    *append_byte_code_5(F5,5,0,0,0,0/F5)
+    *append_byte_code_4(F5,a,b,c,d/F5) →62
+§62
+    →9 *** singleconst
+§7
+    *append_byte_code_1(F5,6/F5)
+    →9 *** time
+§8
+    *get_token(F3,L4,v/F90)
+    *s2ns(F90,1/d)
+    *get_complex_id_by_name(L11,L16,s,0,d/j,r) r↦81
+    *get_complex_id_by_name(L11,L16,s,1,d/j,r) r↪82
+§81
+    *split_variable(j/z,x,y,w)
+    *append_byte_code_5(F5,7,z,x,y,w/F5)
+    *get_child_node_index(L1,L2,n,q/z)
+    *get_child_node_index(L1,L2,z,0/c)
+    *get_node_info(L1,L2,c/i,v)
+    i⊕6↪811 i⊕9↪812 →10
+§811
+    *get_token(F3,L4,v/F90)
+    *get_or_add_variable(L11,F15,s,F90.0/j)
+    *split_variable(j/a,b,c,d)
+    *append_byte_code_5(F5,0,a,b,c,d/F5)
+    →9 *** id
+§812
+    *get_token(F3,L4,v/F90)
+    *s2n(F90/x)
+    *split_variable(x/a,b,c,d)
+    *append_byte_code_5(F5,1,a,b,c,d/F5)
+    →9 *** const
+§82
+    Or *** error
+    →10 *** complex element
+§100
+    *get_token(F3,L4,v/F90)
+    F90.0⇒t
+    *s2ns(F90,1/d) t⊕76 ↪131
+    0⇒t →132
+§131
+    1⇒t
+§132
+    *** t - type
+    *** d - index
+
+    *get_complex_id_by_name(L11,L16,s,t,d/j,r) r↪115
+
+    *split_variable(j/a,b,c,d)
+    *append_byte_code_5(F5,8,a,b,c,d/F5) →9
+§115
+    @+F91(100)
+    @'[SYNTAX ERROR] complex '>F91 *write(F91/) *write(F90/)
+    OQ91 @' not declared'>F91 *write_line(F91/) Or →10 *** complex
+§9
+    1⇒r
+§10
 **
 ********************************************************************
 ~console_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)

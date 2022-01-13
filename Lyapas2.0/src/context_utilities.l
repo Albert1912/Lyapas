@@ -33,8 +33,9 @@ add_subprogram(L1,F2,L3,L4,F5,L6,F7/i,r)
     e⇒L20.2 0⇒L20.3 *** input args
     *get_size_fixed_size(L4/e)
     e⇒L20.4 0⇒L20.5 *** output args
-    *get_field_fixed_size(L1,x,7/e,t)
-    e⇒L20.6 0⇒L20.7 *** variables
+    *get_field_fixed_size(L1,x,6/s,t)
+    *get_field_fixed_size(L1,x,7/l,t)
+    s+l⇒L20.6 0⇒L20.7 *** variables
     *get_size_fixed_size(L6/e)
     e⇒L20.8 0⇒L20.9 *** complexes
 
@@ -228,7 +229,7 @@ get_variables_length(L1,i/l)
 ********************************************************************
 get_or_add_variable(L1,F5,i,v/j)
     *get_field_fixed_size(L1,i,6/s,r)
-    *get_field_fixed_size(L1,i,7/l,r) l↪12
+    *get_field_fixed_size(L1,i,7/l,r) s⇒e l↪12
     s+l-1⇒e
     *contains_single(F5,s,e,v/r,j) r↦1
 §11
