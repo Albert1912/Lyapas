@@ -65,7 +65,16 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
     *add_input_arg(L11,L13,s,0,j/z,r) r↪5
     →4 *** id
 §3
-
+    *get_token(F3,L4,v/F90)
+    F90.0⇒t
+    *s2ns(F90,1/d) t⊕76 ↪31
+    0⇒t →32
+§31
+    1⇒t
+§32
+    *add_complex(L11,L16,s,t,d,0,1/j,r) r↪5
+    t+1⇒t
+    *add_input_arg(L11,L13,s,t,j/z,r) r↪5
     →4 *** complex
 §4
     ∆k →1
@@ -161,8 +170,7 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 §6
     *get_token(F3,L4,v/F90)
     *append_byte_code_2(F5,2,5/F5)
-    @<F90.0
-    *s2n(F90/x)
+    *s2ns(F90,1/x)
     ↑(x>32)61
     1<x⇒z *split_variable(z/a,b,c,d)
     *append_byte_code_4(F5,a,b,c,d/F5)
@@ -313,6 +321,7 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 #get_child_node_index(L1,L2,p,j/i)
 
 #s2n(F1/a)
+#s2ns(F1,s/a)
 
 #get_token(F1,L2,i/F3)
 
