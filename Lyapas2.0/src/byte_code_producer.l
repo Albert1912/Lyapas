@@ -1876,7 +1876,21 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 §7
 **
 ********************************************************************
-~call_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) 1⇒r
+~call_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    @+F90(30)
+    *get_child_node_index(L1,L2,n,0/c)
+    *get_node_info(L1,L2,c/i,v)
+    *get_token(F3,L4,v/F90)
+
+    *get_subprogram_index_by_name(L11,F12,F90/j,r) r↪1
+    *split_variable(j/a,b,c,d)
+    *append_byte_code_5(F5,29,a,b,c,d/F5)
+    1⇒r →2
+§1
+    @+F91(100)
+    @'[SYNTAX ERROR] subprogram "'>F91 *write(F91/)  *write(F90/)
+    OQ91 @'" not defined'>F91 *write_line(F91/)
+§2
 **
 ********************************************************************
 ~console_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
