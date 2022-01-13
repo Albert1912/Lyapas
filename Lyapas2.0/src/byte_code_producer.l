@@ -87,8 +87,32 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
 §7
 **
 ********************************************************************
-~output_args_node_visitor(L1,L2,F3,L4,F5,i,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+~output_args_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    @+F90(100) @+F91(100)
+    *get_node_child_count(L1,L2,n/c)
+    Ok Or
+§1
+    ↑(k=c)6
+    *get_child_node_index(L1,L2,n,k/j)
+    *get_node_info(L1,L2,j/i,v)
+    i⊕6↪2 i⊕7↪3 →4
+§2
+    *get_token(F3,L4,v/F90)
+    *get_or_add_variable(L11,F15,s,F90.0/j)
+    *add_output_arg(L11,L14,s,0,j/z,r) r↪5
+    →4 *** id
+§3
+    @'[SYNTAX ERROR] pass complex as output argument make no sense and not supported'>F91
+    *write_line(F91/) Or
+    →7 *** complex
+§4
+    ∆k →1
+§5
+    @'[SYNTAX ERROR] input argument "'>F91 *write(F91/)  *write(F90/)
+    OQ91 @'" already defined'>F91 *write_line(F91/) →7
+§6
     1⇒r
+§7
 **
 ********************************************************************
 *** body node visitor
