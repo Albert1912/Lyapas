@@ -535,7 +535,7 @@ handle_rule_45(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXSLASHEXPR -> CONSOLEACTION cons
     *get_node_info(L1,L2,n/x,v)
     *update_node_info(L1,L2,n,7,v/)
     *get_parent_node_index(L1,L2,n/j)
-    *update_node_info(L1,L2,j,50,0/)
+    *update_node_info(L1,L2,j,51,0/)
 **
 handle_rule_46(L1,L2,L3,n/L1,L2,L3,j) *** COMPLEXSLASHEXPR -> INDEX
     *get_node_info(L1,L2,n/x,v)
@@ -582,10 +582,10 @@ handle_rule_55(L1,L2,L3,n/L1,L2,L3,j) *** SWAPSECOND -> const
     *get_child_node_index(L1,L2,n,2/j)
 **
 handle_rule_56(L1,L2,L3,n/L1,L2,L3,j) *** CONSOLEACTION -> l
-    *add_node(L1,L2,n,51,0/L1,L2,j)
+    *add_node(L1,L2,n,52,0/L1,L2,j)
 **
 handle_rule_57(L1,L2,L3,n/L1,L2,L3,j) *** CONSOLEACTION -> g
-    *add_node(L1,L2,n,52,0/L1,L2,j)
+    *add_node(L1,L2,n,53,0/L1,L2,j)
 **
 handle_rule_58(L1,L2,L3,n/L1,L2,L3,j) *** JUMPOP -> jz
     *get_parent_node_index(L1,L2,n/j)
