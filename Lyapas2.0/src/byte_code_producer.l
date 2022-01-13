@@ -1681,7 +1681,32 @@ produce_byte_code(L1,L2,F3,L4,F5/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
     1⇒r
 **
 ********************************************************************
-~create_complex_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) 1⇒r
+~create_complex_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18)
+    @+F90(30) @+F92(30)
+    *get_child_node_index(L1,L2,n,0/c)
+    *get_node_info(L1,L2,c/i,v)
+    *get_token(F3,L4,v/F90)
+    F90.0⇒t
+    *s2ns(F90,1/d) t⊕76 ↪31
+    0⇒t →32
+§31
+    1⇒t
+§32
+    *** t - type
+    *** d - index
+
+    *get_child_node_index(L1,L2,n,1/c)
+    *get_node_info(L1,L2,c/i,v)
+    *get_token(F3,L4,v/F92)
+    *s2n(F92/x)
+    *** x - capacity
+    *add_complex(L11,L16,s,t,d,x,0/j,r) r↪5
+    1⇒r →6
+§5
+    @+F91(100)
+    @'[SYNTAX ERROR] complex '>F91 *write(F91/) *write(F90/)
+    OQ91 @' already created or passed as argument'>F91 *write_line(F91/) Or→6
+§6
 **
 ********************************************************************
 ~zeroing_complex_node_visitor(L1,L2,F3,L4,F5,n,s/F5,r,L11,F12,L13,L14,F15,L16,L17,F18) 1⇒r
