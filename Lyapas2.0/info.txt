@@ -45,9 +45,10 @@ L4(2*i) - type (0 - var, 1 - F complex, 2 - L complex)
 L4(2*i+1) - value (var_index or complex index)
 F5 - variables
 L6 - complexes
-L6(3*i) - type (0 - F complex, 1 - L complex)
-L6(3*i+1) - complex index
-L6(3*i+2) - capacity
+L6(4*i) - type (0 - F complex, 1 - L complex)
+L6(4*i+1) - complex index
+L6(4*i+2) - capacity
+L6(4*i+3) - access (value - 0, ref - 1)
 L7 - strings metadata
 L7(0) - start
 L7(1) - length

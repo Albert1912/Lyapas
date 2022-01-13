@@ -5,7 +5,7 @@ init_context(L1,F2,L3,L4,F5,L6,L7,F8/)
     *init_fixed_size(10/L1)
     *init_fixed_size(2/L3)
     *init_fixed_size(2/L4)
-    *init_fixed_size(3/L6)
+    *init_fixed_size(4/L6)
     *init_fixed_size(2/L7)
 **
 ********************************************************************
@@ -264,17 +264,18 @@ get_complexes_length(L1,i/l)
 *** t - type
 *** d - index
 *** c - capacity
+*** a - access
 *** j - added complex index
 *** r - result
 ********************************************************************
-add_complex(L1,L6,i,t,d,c/j,r)
+add_complex(L1,L6,i,t,d,c,a/j,r)
     *get_field_fixed_size(L1,i,8/s,r)
     *get_field_fixed_size(L1,i,9/l,r) l↪11 *** complexes empty
     s+l-1⇒e
     *contains(L6,s,e,t,d/r) r↦1
 §11
-    @+L10(3) 3⇒Q10
-    t⇒L10.0 d⇒L10.1 c⇒L10.2
+    @+L10(4) 4⇒Q10
+    t⇒L10.0 d⇒L10.1 c⇒L10.2 a⇒L10.3
     *add_fixed_size(L6,L10/r)
     *get_field_fixed_size(L1,i,9/l,r) ∆l
     *update_field_fixed_size(L1,i,9,l/r)
@@ -291,11 +292,13 @@ add_complex(L1,L6,i,t,d,c/j,r)
 *** t - type
 *** d - index
 *** c - capacity
+*** a - access
 ********************************************************************
-get_complex(L6,i/t,d,c)
+get_complex(L6,i/t,d,c,a)
     *get_field_fixed_size(L6,i,0/t,r)
     *get_field_fixed_size(L6,i,1/d,r)
     *get_field_fixed_size(L6,i,2/c,r)
+    *get_field_fixed_size(L6,i,3/a,r)
 **
 ********************************************************************
 *** get complex id by name
@@ -366,7 +369,7 @@ get_string_by_id(L7,F8,i/F10)
 **
 ********************************************************************
 ~contains(L1,s,e,t,v/r)
-    @+L10(3) Or
+    @+L10(4) Or
 §1
     ↑(s>e)4
     *get_fixed_size(L1,s/L10,z)
